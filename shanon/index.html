@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stuff I like — shanon</title>
+<style>
+  :root {
+    --bg: #111;
+    --panel: #1b1b1f;
+    --fg: #eee;
+    --muted: #9a9aa2;
+    --accent: #ff7b5a;
+    --border: #2a2a30;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+  body {
+    font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  header {
+    padding: 8px 4px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  header h1 { margin: 0 0 4px; font-size: 20px; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  nav { margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  nav a.active { color: #111; background: var(--accent); border-color: var(--accent); }
+  .day { margin-bottom: 28px; }
+  .day h2 {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    margin: 0 0 12px;
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+  }
+  .event {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .thumb {
+    width: 72px;
+    height: 72px;
+    background-size: cover;
+    background-position: center;
+    background-color: #222;
+    border-radius: 6px;
+  }
+  .thumb-empty { background: #222; }
+  .event-body { min-width: 0; }
+  .event-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .score {
+    background: var(--accent);
+    color: #111;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+  .category {
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    background: #2a2a30;
+    color: var(--fg);
+    text-transform: capitalize;
+  }
+  .category-music { background: #2b3e5a; }
+  .category-comedy { background: #5a3e2b; }
+  .sold-out {
+    color: #ff6b6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  .time { margin-left: auto; }
+  .event h3 {
+    margin: 2px 0 2px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .title { color: var(--fg); text-decoration: none; }
+  .title:hover { text-decoration: underline; }
+  .presenter { color: var(--muted); font-size: 13px; }
+  .venue-line { font-size: 13px; margin-top: 2px; }
+  .venue { color: var(--accent); text-decoration: none; }
+  .venue:hover { text-decoration: underline; }
+  .reason {
+    color: #cfcfd6;
+    font-size: 13px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    background: #26262c;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  footer .tokens { margin-top: 6px; opacity: 0.8; }
+  @media (max-width: 480px) {
+    .event { grid-template-columns: 56px 1fr; padding: 10px; }
+    .thumb { width: 56px; height: 56px; }
+    .event h3 { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Stuff I like</h1>
+  <div class="meta">
+    Picks for <strong>shanon</strong> ·
+    21 of 75 events ·
+    updated 2026-04-20
+  </div>
+  <nav><a href="/" class="active">shanon</a><a href="/bert/">bert</a></nav>
+</header>
+
+    <section class="day">
+      <h2>Monday, February 9</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30033555/cff8bbf4-a2db-4893-a064-547a970b8efa.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/weekly/mon/laugh-basement-tickets" class="title">Laugh Basement</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/goodfoot" class="venue">Goodfoot</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Sunday, April 19</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30307358/1a8f111a-3e31-4782-bb7e-5973a695fdfe.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/the-neon-room-at-helium-chris-higgins-tickets" class="title">The Neon Room at Helium: Chris Higgins</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30198292/59a93b1f-c4a2-4094-9372-f4a831083f78.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">6:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/gnoss-tickets" class="title">Gnoss</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/the-alberta-rose-theatre" class="venue">The Alberta Rose Theatre</a></div>
+        <div class="reason">Gnoss is an indie folk band, which aligns with the liked genres.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">folk</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29862725/0eea52b8-16c9-4f5f-bf03-0c25da8ffb26.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">2:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/songcircle-brightwell-moran-song-circle-third-sundays-in-the-venue-tickets" class="title">Songcircle: Brightwell &amp; Moran Song Circle - Third Sundays in the Venue</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">A song circle event suggests an acoustic or folk performance, aligning with indie folk and Americana interests.</div>
+        <div class="tags"><span class="tag">song circle</span><span class="tag">acoustic</span><span class="tag">indie folk</span><span class="tag">Americana</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29754589/28af4929-3745-40fe-b083-49ed389c2838.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/throw-moments-before-the-wind-tour-tickets" class="title">Free Throw - Moments Before The Wind Tour</a></h3>
+        <div class="presenter">Revolution Hall Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/revolution-hall" class="venue">Revolution Hall</a></div>
+        <div class="reason">Free Throw&#39;s emo sound is adjacent to liked genres like 90s indie rock and college rock.</div>
+        <div class="tags"><span class="tag">emo</span><span class="tag">indie rock</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30007117/ca5812e4-4141-45cf-9c2e-d5d893a31777.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/forest-bailey-with-special-guest-jessica-malone-tickets" class="title">Forest Bailey with Special Guest Jessica Malone</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">Given the venue, this event likely features indie folk or acoustic music, which aligns with liked genres.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">acoustic</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30284374/133bacac-1190-4d53-8145-cc33a3975383.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/abraham-racquetball-tba-tba-tickets" class="title">Abraham Racquetball</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/no-fun" class="venue">No Fun</a></div>
+        <div class="reason">The venue &#39;No Fun&#39; often hosts punk/DIY acts, which could be adjacent to liked genres like 90s indie rock or post-punk.</div>
+        <div class="tags"><span class="tag">punk</span><span class="tag">DIY</span><span class="tag">indie rock</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Monday, April 20</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29280624/60dc8235-41f9-4fe6-95b7-c05dc8a01326.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/the-new-stuff-comedy-showcase-hosted-by-chris-hudson-tickets" class="title">The New Stuff Comedy Showcase, Hosted by Chris Hudson</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/big-al-s" class="venue">Al&#39;s Den</a></div>
+        <div class="reason">This is a standup comedy showcase, which aligns with the preference for standup.</div>
+        <div class="tags"><span class="tag">standup comedy</span><span class="tag">comedy showcase</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30634590/a957ef16-abf3-4a98-86b4-813b099117e5.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/gateway-show-tickets" class="title">Gateway Show</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/nova-pdx" class="venue">NOVA PDX</a></div>
+        <div class="reason">The Gateway Show is a standup comedy event, which aligns with the preference for standup.</div>
+        <div class="tags"><span class="tag">standup comedy</span><span class="tag">comedy show</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31367201/cac2181d-2cd2-4514-993b-ae01ef8e97c4.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/ralph-barbosa-tickets" class="title">Ralph Barbosa</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31367204/4aadfbed-234c-4be5-b56d-eb478ed4687a.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">9:15PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/ralph-barbosa-tickets-9ebkzzn" class="title">Ralph Barbosa</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29915869/139d5fbd-798d-4955-853d-2e6e00dccc17.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">8:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/sure-sure-w-tba-tickets" class="title">SURE SURE w TBA</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/kelly-s-olympian" class="venue">Kelly&#39;s Olympian</a></div>
+        <div class="reason">Sure Sure plays indie pop, which is reasonably aligned with the preferred indie rock and power pop genres.</div>
+        <div class="tags"><span class="tag">indie pop</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Tuesday, April 21</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/27661164/6d1dedea-855a-4495-9c77-e12632b1aceb.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">8:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/21/wednesday-bleeds-tour-2026-night-1-tickets" class="title">Wednesday Bleeds Tour 2026 (Night 1)</a></h3>
+        <div class="presenter">Revolution Hall Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/revolution-hall" class="venue">Revolution Hall</a></div>
+        <div class="reason">Wednesday is an alt-country/indie rock band, which is a strong match for the preferred genres.</div>
+        <div class="tags"><span class="tag">alt-country</span><span class="tag">indie rock</span><span class="tag">shoegaze country</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28384748/0562db9f-56d4-4acd-b397-57688aefd8d8.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">7:00PM (doors)</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/21/die-spitz-tickets" class="title">Die Spitz With special guest Rocket</a></h3>
+        <div class="presenter">Monqui Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/wonder-ballroom" class="venue">Wonder Ballroom</a></div>
+        <div class="reason">Die Spitz plays punk/garage rock, which is a good adjacent genre to 90s indie rock and post-punk.</div>
+        <div class="tags"><span class="tag">punk rock</span><span class="tag">garage rock</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28423739/5bac4059-5753-4df3-9f4f-9815c0cad6a0.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">8:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/21/cmat-tickets" class="title">Cmat</a></h3>
+        <div class="presenter">Monqui Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/mcmenamins-crystal-ballroom" class="venue">McMenamins Crystal Ballroom</a></div>
+        <div class="reason">CMAT&#39;s country-pop style with indie influences aligns well with the alt-country and Americana preferences.</div>
+        <div class="tags"><span class="tag">country pop</span><span class="tag">indie pop</span><span class="tag">alt-country adjacent</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Wednesday, April 22</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29192471/27a31cff-af83-4163-a8c8-b522f174536c.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">6:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/22/dustin-nickerson-tickets" class="title">Dustin Nickerson</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31109685/a89b0b75-d574-4e34-b684-678a8d58f27b.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/22/topic-thunder-tickets" class="title">Topic Thunder</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/siren-theater" class="venue">Siren Theater</a></div>
+        <div class="reason">This appears to be a standup or sketch comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span><span class="tag">sketch comedy</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Thursday, April 23</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29110741/42a04d8b-b9ea-4901-8e42-2cb1cf62f4bf.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:15PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/23/dustin-nickerson-tickets" class="title">Dustin Nickerson</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Friday, April 24</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28890973/e0ce5203-6dc3-42bc-b98a-15ef30a39d33.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">9:15PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/24/dustin-nickerson-tickets" class="title">Dustin Nickerson</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29429410/315e0c80-0025-44da-9a79-a2bf0ab393db.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">10:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/24/roast-battle-portland-tickets" class="title">Roast Battle Portland</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/funhouse-lounge" class="venue">Funhouse Lounge</a></div>
+        <div class="reason">This is a roast battle, a form of standup comedy that aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span><span class="tag">roast battle</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29429413/90c18bd6-509a-479b-ada4-a38c66bd7364.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">10:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/24/roast-city-comedy-show-tickets" class="title">Roast City comedy show</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/funhouse-lounge" class="venue">Funhouse Lounge</a></div>
+        <div class="reason">This is a roast comedy show, a form of standup comedy that aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span><span class="tag">roast battle</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+<footer>
+  Source: <a href="https://dopdx.com/" style="color:var(--accent)">dopdx.com</a>
+  <div class="tokens">
+         Built with gemini-2.5-flash —
+         23,573 tokens
+         (9,026 in / 3,963 out)
+       </div>
+</footer>
+</body>
+</html>

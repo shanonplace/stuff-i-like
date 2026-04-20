@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stuff I like — bert</title>
+<style>
+  :root {
+    --bg: #111;
+    --panel: #1b1b1f;
+    --fg: #eee;
+    --muted: #9a9aa2;
+    --accent: #ff7b5a;
+    --border: #2a2a30;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--fg); }
+  body {
+    font: 16px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 16px;
+  }
+  header {
+    padding: 8px 4px 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+  header h1 { margin: 0 0 4px; font-size: 20px; }
+  header .meta { color: var(--muted); font-size: 13px; }
+  nav { margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  nav a.active { color: #111; background: var(--accent); border-color: var(--accent); }
+  .day { margin-bottom: 28px; }
+  .day h2 {
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    margin: 0 0 12px;
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+  }
+  .event {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  .thumb {
+    width: 72px;
+    height: 72px;
+    background-size: cover;
+    background-position: center;
+    background-color: #222;
+    border-radius: 6px;
+  }
+  .thumb-empty { background: #222; }
+  .event-body { min-width: 0; }
+  .event-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .score {
+    background: var(--accent);
+    color: #111;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+  }
+  .category {
+    padding: 1px 6px;
+    border-radius: 10px;
+    font-size: 11px;
+    background: #2a2a30;
+    color: var(--fg);
+    text-transform: capitalize;
+  }
+  .category-music { background: #2b3e5a; }
+  .category-comedy { background: #5a3e2b; }
+  .sold-out {
+    color: #ff6b6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+  }
+  .time { margin-left: auto; }
+  .event h3 {
+    margin: 2px 0 2px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .title { color: var(--fg); text-decoration: none; }
+  .title:hover { text-decoration: underline; }
+  .presenter { color: var(--muted); font-size: 13px; }
+  .venue-line { font-size: 13px; margin-top: 2px; }
+  .venue { color: var(--accent); text-decoration: none; }
+  .venue:hover { text-decoration: underline; }
+  .reason {
+    color: #cfcfd6;
+    font-size: 13px;
+    margin-top: 6px;
+    font-style: italic;
+  }
+  .tags { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 4px; }
+  .tag {
+    font-size: 11px;
+    padding: 1px 6px;
+    border-radius: 10px;
+    background: #26262c;
+    color: var(--muted);
+  }
+  footer {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+  footer .tokens { margin-top: 6px; opacity: 0.8; }
+  @media (max-width: 480px) {
+    .event { grid-template-columns: 56px 1fr; padding: 10px; }
+    .thumb { width: 56px; height: 56px; }
+    .event h3 { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Stuff I like</h1>
+  <div class="meta">
+    Picks for <strong>bert</strong> ·
+    11 of 75 events ·
+    updated 2026-04-20
+  </div>
+  <nav><a href="/">shanon</a><a href="/bert/" class="active">bert</a></nav>
+</header>
+
+    <section class="day">
+      <h2>Sunday, April 19</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30007117/ca5812e4-4141-45cf-9c2e-d5d893a31777.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/forest-bailey-with-special-guest-jessica-malone-tickets" class="title">Forest Bailey with Special Guest Jessica Malone</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">Forest Bailey and Jessica Malone are singer-songwriters, which aligns perfectly with the preferred genres.</div>
+        <div class="tags"><span class="tag">singer-songwriter</span><span class="tag">folk</span><span class="tag">Americana</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30906211/688372a3-01a6-4f8b-9992-64606af6aafa.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">3:30PM (doors)</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/monica-faricy-andrea-walker-tickets" class="title">Monica Faricy + Andrea Walker</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/atlantis-lounge" class="venue">Atlantis Lounge</a></div>
+        <div class="reason">Monica Faricy and Andrea Walker are jazz vocalists, which is a strong match for the preferred jazz genres.</div>
+        <div class="tags"><span class="tag">jazz</span><span class="tag">vocal jazz</span><span class="tag">jazz piano</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30198292/59a93b1f-c4a2-4094-9372-f4a831083f78.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">6:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/gnoss-tickets" class="title">Gnoss</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/the-alberta-rose-theatre" class="venue">The Alberta Rose Theatre</a></div>
+        <div class="reason">Gnoss is a folk band, which aligns well with the preferred folk genre.</div>
+        <div class="tags"><span class="tag">folk</span><span class="tag">Scottish folk</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29862725/0eea52b8-16c9-4f5f-bf03-0c25da8ffb26.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">2:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/songcircle-brightwell-moran-song-circle-third-sundays-in-the-venue-tickets" class="title">Songcircle: Brightwell &amp; Moran Song Circle - Third Sundays in the Venue</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">A song circle aligns well with the preference for folk and singer-songwriter traditions.</div>
+        <div class="tags"><span class="tag">song circle</span><span class="tag">singer-songwriter</span><span class="tag">folk</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30934856/837fb7d9-8266-4913-a0e2-b43e4e46e8f9.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">5:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/irish-sundays-station-island-quartet-tickets" class="title">Irish Sundays, Station Island Quartet</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/rock-creek-tavern" class="venue">Rock Creek Tavern</a></div>
+        <div class="reason">The Station Island Quartet playing Irish folk music aligns well with the preferred folk genre.</div>
+        <div class="tags"><span class="tag">folk</span><span class="tag">Irish folk</span><span class="tag">quartet</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30906218/a0780bfa-e3e5-441a-a926-5772f79bf085.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">6:30PM (doors)</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/the-occidental-tourists-tickets" class="title">The Occidental Tourists</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/atlantis-lounge" class="venue">Atlantis Lounge</a></div>
+        <div class="reason">The Occidental Tourists play Americana/folk music, which is a strong match for the preferred genres.</div>
+        <div class="tags"><span class="tag">Americana</span><span class="tag">folk</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29808411/254c8338-f215-48d1-a4b4-6696895a6b78.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">2:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/19/silent-film-series-battleship-potemkin-1923-tickets" class="title">Silent Film Series: Battleship Potemkin (1923)</a></h3>
+        <div class="presenter">Elsinore presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/elsinore-theatre" class="venue">Elsinore Theatre</a></div>
+        <div class="reason">This silent film screening likely features live musical accompaniment, which could align with classical or orchestral interests.</div>
+        <div class="tags"><span class="tag">silent film</span><span class="tag">live accompaniment</span><span class="tag">classical</span><span class="tag">orchestral</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Monday, April 20</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31276500/caf1c50a-28ca-4100-a53b-e7154f3ee800.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/fear-no-music-presents-looking-back-the-feldman-in-my-life-tickets" class="title">Fear No Music presents Looking Back: The Feldman In My Life</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/the-old-church-concert-hall" class="venue">The Old Church Concert Hall</a></div>
+        <div class="reason">This event features contemporary classical music, specifically referencing Morton Feldman, which aligns well with classical music interests.</div>
+        <div class="tags"><span class="tag">classical</span><span class="tag">contemporary classical</span><span class="tag">chamber music</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/27194999/22436291-61a3-4b63-bc02-69fca90cc1fe.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/violin-squared-tickets" class="title">Violin Squared</a></h3>
+        <div class="presenter">45th Parallel Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/polaris-hall" class="venue">Polaris Hall</a></div>
+        <div class="reason">The title &quot;Violin Squared&quot; strongly suggests a classical chamber music performance, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">classical</span><span class="tag">chamber music</span><span class="tag">violin</span></div>
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/20/square-dancing-with-caller-amy-hofer-and-hog-dog-tickets" class="title">Square Dancing with Caller Amy Hofer and Hog Dog</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/the-showdown" class="venue">The Showdown</a></div>
+        <div class="reason">Square dancing features folk music, which aligns with the preferred genre, even if it&#39;s a participatory event.</div>
+        <div class="tags"><span class="tag">folk</span><span class="tag">square dancing</span><span class="tag">traditional music</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+
+    <section class="day">
+      <h2>Tuesday, April 21</h2>
+      
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28423739/5bac4059-5753-4df3-9f4f-9815c0cad6a0.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">8:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/4/21/cmat-tickets" class="title">Cmat</a></h3>
+        <div class="presenter">Monqui Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/mcmenamins-crystal-ballroom" class="venue">McMenamins Crystal Ballroom</a></div>
+        <div class="reason">CMAT is a country-pop artist, which aligns somewhat with the preferred country-folk genre.</div>
+        <div class="tags"><span class="tag">country-pop</span><span class="tag">singer-songwriter</span></div>
+      </div>
+    </article>
+  
+    </section>
+  
+<footer>
+  Source: <a href="https://dopdx.com/" style="color:var(--accent)">dopdx.com</a>
+  <div class="tokens">
+         Built with gemini-2.5-flash —
+         22,788 tokens
+         (8,903 in / 4,015 out)
+       </div>
+</footer>
+</body>
+</html>
