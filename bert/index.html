@@ -131,6 +131,31 @@
     background: #26262c;
     color: var(--muted);
   }
+  .votes {
+    margin-top: 8px;
+    display: flex;
+    gap: 6px;
+  }
+  .votes .vote {
+    background: #26262c;
+    border: 1px solid var(--border);
+    color: var(--fg);
+    font-size: 14px;
+    line-height: 1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .votes .vote:hover { background: #32323a; }
+  .votes .vote:disabled { cursor: default; opacity: 0.6; }
+  .votes[data-state="up"] .vote.up,
+  .votes.voted-up .vote.up {
+    background: #2c4a2c; border-color: #3d6b3d;
+  }
+  .votes[data-state="down"] .vote.down,
+  .votes.voted-down .vote.down {
+    background: #4a2c2c; border-color: #6b3d3d;
+  }
   footer {
     margin-top: 24px;
     padding-top: 16px;
@@ -152,14 +177,204 @@
   <h1>Stuff I like</h1>
   <div class="meta">
     Picks for <strong>bert</strong> ·
-    7 of 50 events ·
-    updated 2026-04-28
+    13 of 75 events ·
+    updated 2026-05-02
   </div>
   <nav><a href="../shanon/">shanon</a><a href="../bert/" class="active">bert</a></nav>
 </header>
-<section class="day"><h2>Tuesday, April 28</h2>
+<section class="day"><h2>Saturday, May 2</h2>
     <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30929963/cda341e6-803d-4ee3-8b31-44846e799072.jpg')"></div>
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30387084/926ee1fc-72a3-4e22-aed5-95ec1a666817.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">9:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/anna-tivel-tickets" class="title">Anna Tivel</a></h3>
+        <div class="presenter">Mississippi Studios Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/mississippi-studios" class="venue">Mississippi Studios</a></div>
+        <div class="reason">Anna Tivel is a strong match for the preferred Americana, folk, and singer-songwriter genres.</div>
+        <div class="tags"><span class="tag">Americana</span><span class="tag">folk</span><span class="tag">singer-songwriter</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29622739/a0eb4eb2-6402-48d7-af61-fd6334591f1d.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">7:00PM (doors)</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/jose-gonzalez-against-the-dying-of-the-light-tour-tickets" class="title">José González – Against The Dying Of The Light Tour</a></h3>
+        <div class="presenter">Monqui Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/wonder-ballroom" class="venue">Wonder Ballroom</a></div>
+        <div class="reason">José González is a well-regarded indie folk artist, aligning with the folk and singer-songwriter preferences.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">singer-songwriter</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30093277/de266042-5b60-4c4b-9833-f9be54c6d945.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">12:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/jose-gonzalez-tickets" class="title">José Gonzalez</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/pnc-live-studio" class="venue">PNC Live Studio</a></div>
+        <div class="reason">José González is a good match for the folk and singer-songwriter preferences.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">singer-songwriter</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">8:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/an-evening-with-nearly-acoustic-tickets" class="title">An Evening with Nearly Acoustic</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/the-showdown" class="venue">The Showdown</a></div>
+        <div class="reason">The &#39;Nearly Acoustic&#39; title strongly suggests a folk or singer-songwriter performance, aligning well with the taste profile.</div>
+        <div class="tags"><span class="tag">acoustic</span><span class="tag">folk</span><span class="tag">singer-songwriter</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28657145/623eb404-a575-47e1-87b7-ebd4b37fa868.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">6:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/waxahatchee-mj-lenderman-brennan-wedl-tickets" class="title">Waxahatchee &amp; Mj Lenderman Brennan Wedl</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/roseland-theater" class="venue">Roseland Theater</a></div>
+        <div class="reason">Waxahatchee and Mj Lenderman offer alt-country and folk influences that align with the taste profile.</div>
+        <div class="tags"><span class="tag">alt-country</span><span class="tag">indie rock</span><span class="tag">folk</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28959873/6f55a38a-e5c4-4d42-be21-65f5c781ccee.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/treaty-oak-revival-west-texas-degenerate-tour-tickets" class="title">Treaty Oak Revival - West Texas Degenerate Tour</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/veterans-memorial-coliseum" class="venue">Veterans Memorial Coliseum</a></div>
+        <div class="reason">Treaty Oak Revival&#39;s Texas country sound aligns with the country-folk and Americana preferences.</div>
+        <div class="tags"><span class="tag">Texas country</span><span class="tag">country-folk</span><span class="tag">Americana</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31436145/9706d5ab-bc2d-4848-8c73-1ddacf9b0c84.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">9:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/fusion-tickets" class="title">Fusion</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/dante-s" class="venue">Dante&#39;s</a></div>
+        <div class="reason">The title &quot;Fusion&quot; suggests jazz fusion, which is a subgenre of the liked jazz category.</div>
+        <div class="tags"><span class="tag">jazz</span><span class="tag">jazz fusion</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30906505/bbdff2ee-b802-44e5-8ed3-6e467c61a292.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">5:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/ramblin-rose-tickets" class="title">Ramblin Rose</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/alberta-street-pub" class="venue">Alberta Street Pub</a></div>
+        <div class="reason">Ramblin Rose suggests a folk or Americana style, aligning with preferred genres.</div>
+        <div class="tags"><span class="tag">folk</span><span class="tag">Americana</span><span class="tag">country</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31300319/cd1e7248-0ce5-4102-b986-000813d5583a.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">9:00PM (doors)</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/garcia-birthday-band-tickets" class="title">Garcia Birthday Band</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/goodfoot" class="venue">Goodfoot</a></div>
+        <div class="reason">The Garcia Birthday Band is a Grateful Dead tribute, which aligns with folk rock and the acceptance of tribute acts.</div>
+        <div class="tags"><span class="tag">tribute band</span><span class="tag">folk rock</span><span class="tag">jam band</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30773213/2b6da66a-b4a6-4431-a4f8-50727cc47492.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">10:30AM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/workshop-avery-hill-s-songwriting-sessions-tickets" class="title">Workshop: Avery Hill&#39;s Songwriting Sessions</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">A songwriting workshop aligns well with the interest in singer-songwriter traditions.</div>
+        <div class="tags"><span class="tag">songwriting</span><span class="tag">workshop</span><span class="tag">singer-songwriter</span></div>
+        
+      </div>
+    </article>
+  </section>
+<section class="day"><h2>Sunday, May 3</h2>
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29899821/ae95e066-24a3-4915-b837-5d8ee5bf05c1.jpg')"></div>
       <div class="event-body">
         <div class="event-head">
           <span class="score">9</span>
@@ -167,89 +382,18 @@
           
           <span class="time">8:00PM</span>
         </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/rich-halley-4-tba-tickets" class="title">Rich Halley 4 TBA</a></h3>
+        <h3><a href="https://dopdx.com/events/2026/5/3/vincent-neil-emerson-tickets" class="title">Vincent Neil Emerson</a></h3>
+        <div class="presenter">True West Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/revolution-hall" class="venue">Revolution Hall</a></div>
+        <div class="reason">Vincent Neil Emerson is an Americana/country-folk singer-songwriter, which is a strong match for the taste profile.</div>
+        <div class="tags"><span class="tag">Americana</span><span class="tag">country-folk</span><span class="tag">singer-songwriter</span></div>
         
-        <div class="venue-line"><a href="https://dopdx.com/venues/no-fun" class="venue">No Fun</a></div>
-        <div class="reason">Rich Halley is a jazz musician, which is a highly preferred genre in the taste profile.</div>
-        <div class="tags"><span class="tag">jazz</span><span class="tag">saxophone</span><span class="tag">bebop</span><span class="tag">post-bop</span></div>
       </div>
     </article>
   
 
     <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31295215/05eda650-7a0c-435b-9410-34887c40b06f.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/local-roots-music-nw-presents-local-roots-live-featuring-the-waysiders-guilded-lilly-tickets" class="title">Local Roots Music NW Presents: Local Roots Live Featuring: The Waysiders &amp; Guilded Lilly</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/alberta-street-pub" class="venue">Alberta Street Pub</a></div>
-        <div class="reason">The &#39;Local Roots Music NW&#39; branding strongly indicates a match with liked Americana and folk genres.</div>
-        <div class="tags"><span class="tag">Americana</span><span class="tag">folk</span><span class="tag">country-folk</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30427300/a5bdbd00-dc46-4e5f-add1-2dfcaa8da451.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">6:30PM (doors)</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/lizzie-oakwood-shore-pines-rose-gerber-tickets" class="title">Lizzie Oakwood + Shore Pines + Rose Gerber</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/atlantis-lounge" class="venue">Atlantis Lounge</a></div>
-        <div class="reason">The artist names suggest a singer-songwriter or folk style, aligning with preferred genres.</div>
-        <div class="tags"><span class="tag">singer-songwriter</span><span class="tag">folk</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">6:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/two-step-tuesday-with-western-edition-and-dance-lessons-tickets" class="title">Two-Step Tuesday with Western Edition and Dance Lessons</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-showdown" class="venue">The Showdown</a></div>
-        <div class="reason">The &#39;Two-Step&#39; and &#39;Western Edition&#39; suggest country music, which aligns well with liked Americana and country-folk genres.</div>
-        <div class="tags"><span class="tag">country</span><span class="tag">Americana</span><span class="tag">two-step</span></div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Wednesday, April 29</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28920959/f9c1549a-5d2e-4e9a-bab1-3b1f00b078fa.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">6:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/29/dervish-tickets" class="title">Dervish</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-alberta-rose-theatre" class="venue">The Alberta Rose Theatre</a></div>
-        <div class="reason">Dervish is a traditional Irish folk band, which is a strong match for the liked folk genre.</div>
-        <div class="tags"><span class="tag">folk</span><span class="tag">Irish folk</span><span class="tag">traditional folk</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29654319/8d096a34-bd39-4eef-8d2a-7bb7fe966717.jpg')"></div>
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29874481/5a17cad8-edfe-4680-9611-485ce5b72f71.jpg')"></div>
       <div class="event-body">
         <div class="event-head">
           <span class="score">7</span>
@@ -257,29 +401,31 @@
           
           <span class="time">7:00PM</span>
         </div>
-        <h3><a href="https://dopdx.com/events/2026/4/29/ashes-to-amber-tickets" class="title">Ashes To Amber</a></h3>
+        <h3><a href="https://dopdx.com/events/2026/5/3/tenille-townes-tickets" class="title">Tenille Townes</a></h3>
         <div class="presenter">Polaris Hall Presents</div>
         <div class="venue-line"><a href="https://dopdx.com/venues/polaris-hall" class="venue">Polaris Hall</a></div>
-        <div class="reason">Ashes To Amber plays indie folk and Americana, which aligns well with the preferred genres.</div>
-        <div class="tags"><span class="tag">indie folk</span><span class="tag">Americana</span></div>
+        <div class="reason">Tenille Townes is a country singer, aligning with the country-folk and Americana interests.</div>
+        <div class="tags"><span class="tag">country</span><span class="tag">country-folk</span><span class="tag">singer-songwriter</span></div>
+        
       </div>
     </article>
   
 
     <article class="event">
-      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30286090/f8819d55-e2f5-40b0-92f0-790735ac8a37.png')"></div>
       <div class="event-body">
         <div class="event-head">
-          <span class="score">7</span>
+          <span class="score">6</span>
           <span class="category category-music">music</span>
           
-          <span class="time">8:00PM</span>
+          <span class="time">7:00PM</span>
         </div>
-        <h3><a href="https://dopdx.com/events/2026/4/29/madam-cooper-s-country-cabaret-tickets" class="title">Madam Cooper&#39;s Country Cabaret</a></h3>
+        <h3><a href="https://dopdx.com/events/2026/5/3/mitch-whitaker-and-berkley-tickets" class="title">Mitch Whitaker and Berkley</a></h3>
         
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-showdown" class="venue">The Showdown</a></div>
-        <div class="reason">&#39;Country Cabaret&#39; suggests country music, which aligns well with liked Americana and country-folk genres.</div>
-        <div class="tags"><span class="tag">country</span><span class="tag">cabaret</span><span class="tag">Americana</span></div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">While artists are unknown, the venue Artichoke Music frequently hosts folk and acoustic performances, suggesting a potential match.</div>
+        <div class="tags"><span class="tag">folk</span><span class="tag">acoustic</span><span class="tag">unknown artist</span></div>
+        
       </div>
     </article>
   </section>
@@ -287,9 +433,10 @@
   Source: <a href="https://dopdx.com/" style="color:var(--accent)">dopdx.com</a>
   <div class="tokens">
          Built with gemini-2.5-flash —
-         13,138 tokens
-         (5,919 in / 2,363 out)
+         22,539 tokens
+         (8,973 in / 3,936 out)
        </div>
 </footer>
+
 </body>
 </html>

@@ -131,6 +131,31 @@
     background: #26262c;
     color: var(--muted);
   }
+  .votes {
+    margin-top: 8px;
+    display: flex;
+    gap: 6px;
+  }
+  .votes .vote {
+    background: #26262c;
+    border: 1px solid var(--border);
+    color: var(--fg);
+    font-size: 14px;
+    line-height: 1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .votes .vote:hover { background: #32323a; }
+  .votes .vote:disabled { cursor: default; opacity: 0.6; }
+  .votes[data-state="up"] .vote.up,
+  .votes.voted-up .vote.up {
+    background: #2c4a2c; border-color: #3d6b3d;
+  }
+  .votes[data-state="down"] .vote.down,
+  .votes.voted-down .vote.down {
+    background: #4a2c2c; border-color: #6b3d3d;
+  }
   footer {
     margin-top: 24px;
     padding-top: 16px;
@@ -152,323 +177,36 @@
   <h1>Stuff I like</h1>
   <div class="meta">
     Picks for <strong>shanon</strong> ·
-    19 of 50 events ·
-    updated 2026-04-28
+    17 of 75 events ·
+    updated 2026-05-02
   </div>
   <nav><a href="../shanon/" class="active">shanon</a><a href="../bert/">bert</a></nav>
 </header>
-<section class="day"><h2>Tuesday, April 28</h2>
+<section class="day"><h2>Saturday, May 2</h2>
     <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31295215/05eda650-7a0c-435b-9410-34887c40b06f.jpg')"></div>
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28657145/623eb404-a575-47e1-87b7-ebd4b37fa868.jpg')"></div>
       <div class="event-body">
         <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/local-roots-music-nw-presents-local-roots-live-featuring-the-waysiders-guilded-lilly-tickets" class="title">Local Roots Music NW Presents: Local Roots Live Featuring: The Waysiders &amp; Guilded Lilly</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/alberta-street-pub" class="venue">Alberta Street Pub</a></div>
-        <div class="reason">The event features local roots music, aligning well with Americana and alt-country preferences.</div>
-        <div class="tags"><span class="tag">Americana</span><span class="tag">alt-country</span><span class="tag">indie folk</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31225016/9f9f3e52-958f-47a5-8925-e76719084595.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">7:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/unhinged-comedy-show-seated-show-tickets" class="title">UNHINGED Comedy Show (seated show)</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-get-down" class="venue">The Get Down</a></div>
-        <div class="reason">This is a standup comedy show, which is a strong match for the taste profile.</div>
-        <div class="tags"><span class="tag">standup</span><span class="tag">comedy</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29794760/e823c572-caeb-4bb4-b4d8-9ec066de2684.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">7:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/chris-estrada-tickets" class="title">Chris Estrada</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
-        <div class="tags"><span class="tag">standup</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29754521/475a6849-c4ef-4058-a394-41e5619da741.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/the-cribs-tickets" class="title">The Cribs</a></h3>
-        <div class="presenter">Mississippi Studios Presents</div>
-        <div class="venue-line"><a href="https://dopdx.com/venues/mississippi-studios" class="venue">Mississippi Studios</a></div>
-        <div class="reason">The Cribs align with the preferred indie rock and post-punk genres.</div>
-        <div class="tags"><span class="tag">indie rock</span><span class="tag">post-punk</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30788489/59e3e986-24fd-439b-af8e-4b2efbb6c965.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
+          <span class="score">9</span>
           <span class="category category-music">music</span>
           <span class="sold-out">Sold Out</span>
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/comedy-chords-with-cameron-ford-and-amanda-lynn-deal-tickets" class="title">Comedy Chords, with Cameron Ford, and Amanda Lynn Deal</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/big-al-s" class="venue">Al&#39;s Den</a></div>
-        <div class="reason">This appears to be a standup comedy show, which aligns with the taste profile&#39;s comedy preferences.</div>
-        <div class="tags"><span class="tag">standup</span><span class="tag">comedy</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-music">music</span>
-          
           <span class="time">6:30PM</span>
         </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/two-step-tuesday-with-western-edition-and-dance-lessons-tickets" class="title">Two-Step Tuesday with Western Edition and Dance Lessons</a></h3>
+        <h3><a href="https://dopdx.com/events/2026/5/2/waxahatchee-mj-lenderman-brennan-wedl-tickets" class="title">Waxahatchee &amp; Mj Lenderman Brennan Wedl</a></h3>
         
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-showdown" class="venue">The Showdown</a></div>
-        <div class="reason">The event features Western music, which is a good match for alt-country and Americana preferences.</div>
-        <div class="tags"><span class="tag">country</span><span class="tag">western</span><span class="tag">Americana</span></div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/roseland-theater" class="venue">Roseland Theater</a></div>
+        <div class="reason">Waxahatchee and MJ Lenderman are excellent fits for the alt-country and indie rock preferences.</div>
+        <div class="tags"><span class="tag">alt-country</span><span class="tag">indie rock</span><span class="tag">Americana</span></div>
+        
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31527965/684174f6-e587-4354-9047-e67a5a7d8fe9.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/sordid-behavior-adults-only-comedy-storytelling-tickets" class="title">SORDID BEHAVIOR: Adults Only Comedy &amp; Storytelling</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-noshpit-sandwich-bar" class="venue">The Noshpit Sandwich Bar</a></div>
-        <div class="reason">The event features comedy and storytelling, which are generally preferred.</div>
-        <div class="tags"><span class="tag">standup</span><span class="tag">storytelling</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29520348/02b70fde-3ee3-44b4-b455-0bcf45ace9c8.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">6</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/bush-with-mammoth-and-james-and-the-cold-gun-tickets" class="title">Bush with Mammoth and James And The Cold Gun</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/theater-of-the-clouds" class="venue">Theater of the Clouds</a></div>
-        <div class="reason">Bush is a classic alternative band from the 90s, aligning with the taste profile.</div>
-        <div class="tags"><span class="tag">90s alternative</span><span class="tag">post-grunge</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31102876/20898ed1-d74f-446b-ab51-9bfedeaf00d8.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">6</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">8:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/28/weird-nightmare-tickets" class="title">Weird Nightmare</a></h3>
-        <div class="presenter">Polaris Hall Presents</div>
-        <div class="venue-line"><a href="https://dopdx.com/venues/polaris-hall" class="venue">Polaris Hall</a></div>
-        <div class="reason">Weird Nightmare&#39;s garage rock sound is adjacent to preferred indie and post-punk genres.</div>
-        <div class="tags"><span class="tag">garage rock</span><span class="tag">indie rock</span></div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Wednesday, April 29</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29227390/a5e63e5b-9308-42e0-a00e-14498b3b6669.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">7:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/29/rayna-greenberg-honestly-it-s-you-tickets" class="title">Rayna Greenberg: Honestly, It’s You</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
-        <div class="tags"><span class="tag">standup</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">8:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/29/madam-cooper-s-country-cabaret-tickets" class="title">Madam Cooper&#39;s Country Cabaret</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-showdown" class="venue">The Showdown</a></div>
-        <div class="reason">Madam Cooper&#39;s Country Cabaret aligns well with the alt-country and Americana preferences.</div>
-        <div class="tags"><span class="tag">country</span><span class="tag">cabaret</span><span class="tag">Americana</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28920959/f9c1549a-5d2e-4e9a-bab1-3b1f00b078fa.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">6</span>
-          <span class="category category-music">music</span>
-          
-          <span class="time">6:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/29/dervish-tickets" class="title">Dervish</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/the-alberta-rose-theatre" class="venue">The Alberta Rose Theatre</a></div>
-        <div class="reason">Dervish plays traditional folk music, which is adjacent to the preferred indie folk genre.</div>
-        <div class="tags"><span class="tag">folk</span><span class="tag">Irish folk</span></div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Thursday, April 30</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29602275/87242a3e-e54e-439b-85fc-a7d253df3aaf.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">7:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/4/30/doknow-dahawmies-comedy-tour-tickets" class="title">DOKNOW &amp; DaHawmies Comedy Tour</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This comedy tour likely features standup, which is a preferred comedy format.</div>
-        <div class="tags"><span class="tag">standup</span><span class="tag">comedy tour</span></div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Friday, May 1</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29661505/2dbb2484-96d5-4e72-8406-abc5247ca3e9.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">7:00PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/5/1/ryan-long-tickets" class="title">Ryan Long</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
-        <div class="tags"><span class="tag">standup</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29661504/ecc77d09-1412-4644-af65-ebc77a72774e.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">9:15PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/5/1/ryan-long-tickets-nepjn8v" class="title">Ryan Long</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
-        <div class="tags"><span class="tag">standup</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29792029/4d56a3d4-d451-4e7d-bcb2-6dac73fddd75.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">8</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">8:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/5/1/jimmy-pardo-tickets" class="title">Jimmy Pardo</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/siren-theater" class="venue">Siren Theater</a></div>
-        <div class="reason">Jimmy Pardo is a known comedian, indicating a standup show which is preferred.</div>
-        <div class="tags"><span class="tag">standup</span></div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cloudinary-assets.dostuffmedia.com/res/dostuff-media/image/upload/metro-bkg_1-19/1610385111.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="score">7</span>
-          <span class="category category-comedy">comedy</span>
-          
-          <span class="time">7:30PM</span>
-        </div>
-        <h3><a href="https://dopdx.com/events/2026/5/1/dead-comics-society-tickets" class="title">Dead Comics Society</a></h3>
-        
-        <div class="venue-line"><a href="https://dopdx.com/venues/framework" class="venue">Framework</a></div>
-        <div class="reason">The title suggests a standup comedy show, which aligns with preferences.</div>
-        <div class="tags"><span class="tag">standup</span></div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Saturday, May 2</h2>
     <article class="event">
       <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29661517/ce4fbeb8-fd73-4986-985c-535b4bfa3f5b.png')"></div>
       <div class="event-body">
         <div class="event-head">
-          <span class="score">8</span>
+          <span class="score">9</span>
           <span class="category category-comedy">comedy</span>
           
           <span class="time">7:00PM</span>
@@ -476,8 +214,9 @@
         <h3><a href="https://dopdx.com/events/2026/5/2/ryan-long-tickets" class="title">Ryan Long</a></h3>
         
         <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="reason">Ryan Long is a known standup comedian, which aligns with the taste profile.</div>
         <div class="tags"><span class="tag">standup</span></div>
+        
       </div>
     </article>
   
@@ -486,7 +225,7 @@
       <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29661513/57546d27-61d0-406c-bfd7-eb2143837d8a.png')"></div>
       <div class="event-body">
         <div class="event-head">
-          <span class="score">8</span>
+          <span class="score">9</span>
           <span class="category category-comedy">comedy</span>
           
           <span class="time">9:30PM</span>
@@ -494,8 +233,275 @@
         <h3><a href="https://dopdx.com/events/2026/5/2/ryan-long-tickets-abroapm" class="title">Ryan Long</a></h3>
         
         <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
-        <div class="reason">This is a standup comedy show, which aligns with the taste profile.</div>
+        <div class="reason">Ryan Long is a known standup comedian, which aligns with the taste profile.</div>
         <div class="tags"><span class="tag">standup</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29622739/a0eb4eb2-6402-48d7-af61-fd6334591f1d.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          <span class="sold-out">Sold Out</span>
+          <span class="time">7:00PM (doors)</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/jose-gonzalez-against-the-dying-of-the-light-tour-tickets" class="title">José González – Against The Dying Of The Light Tour</a></h3>
+        <div class="presenter">Monqui Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/wonder-ballroom" class="venue">Wonder Ballroom</a></div>
+        <div class="reason">José González is an indie folk artist, which aligns well with the taste profile.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">acoustic</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30093277/de266042-5b60-4c4b-9833-f9be54c6d945.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">12:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/jose-gonzalez-tickets" class="title">José Gonzalez</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/pnc-live-studio" class="venue">PNC Live Studio</a></div>
+        <div class="reason">José González is an indie folk artist, which aligns well with the taste profile.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">acoustic</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/28959873/6f55a38a-e5c4-4d42-be21-65f5c781ccee.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/treaty-oak-revival-west-texas-degenerate-tour-tickets" class="title">Treaty Oak Revival - West Texas Degenerate Tour</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/veterans-memorial-coliseum" class="venue">Veterans Memorial Coliseum</a></div>
+        <div class="reason">Treaty Oak Revival&#39;s Red Dirt/Texas Country sound aligns well with the alt-country and Americana preferences.</div>
+        <div class="tags"><span class="tag">alt-country</span><span class="tag">Americana</span><span class="tag">Texas Country</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30387084/926ee1fc-72a3-4e22-aed5-95ec1a666817.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">9:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/anna-tivel-tickets" class="title">Anna Tivel</a></h3>
+        <div class="presenter">Mississippi Studios Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/mississippi-studios" class="venue">Mississippi Studios</a></div>
+        <div class="reason">Anna Tivel&#39;s Americana/folk style is a good match for the profile&#39;s genre preferences.</div>
+        <div class="tags"><span class="tag">Americana</span><span class="tag">indie folk</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30906505/bbdff2ee-b802-44e5-8ed3-6e467c61a292.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">5:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/ramblin-rose-tickets" class="title">Ramblin Rose</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/alberta-street-pub" class="venue">Alberta Street Pub</a></div>
+        <div class="reason">The name &quot;Ramblin Rose&quot; suggests an Americana or folk style that aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">Americana</span><span class="tag">folk</span><span class="tag">alt-country</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31437158/2c8e930e-08af-4cb9-bee3-915961b4eb08.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">6</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">8:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/2/the-bug-nasties-thee-daywalkers-the-only-living-boys-montgomery-wards-tickets" class="title">The Bug Nasties + Thee Daywalkers + The Only Living Boys + Montgomery Wards</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/the-six-below-midnight" class="venue">The Six Below Midnight</a></div>
+        <div class="reason">These bands sound like they could fit within the broader indie rock or garage rock lineage.</div>
+        <div class="tags"><span class="tag">indie rock</span><span class="tag">garage rock</span><span class="tag">punk rock</span></div>
+        
+      </div>
+    </article>
+  </section>
+<section class="day"><h2>Sunday, May 3</h2>
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29899821/ae95e066-24a3-4915-b837-5d8ee5bf05c1.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">8:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/3/vincent-neil-emerson-tickets" class="title">Vincent Neil Emerson</a></h3>
+        <div class="presenter">True West Presents</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/revolution-hall" class="venue">Revolution Hall</a></div>
+        <div class="reason">Vincent Neil Emerson is an alt-country artist, which is a strong match for the preferred genres.</div>
+        <div class="tags"><span class="tag">alt-country</span><span class="tag">Americana</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29661514/f179802f-1563-4fd2-a632-2c9175307d97.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/3/ryan-long-tickets" class="title">Ryan Long</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">Ryan Long is a known standup comedian, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/31422823/226ccf5b-dcb4-4034-8424-1b65c7ff5634.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/3/gold-rush-comedy-tour-tickets" class="title">Gold Rush Comedy Tour</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/siren-theater" class="venue">Siren Theater</a></div>
+        <div class="reason">&quot;Comedy Tour&quot; strongly suggests a standup show, which is a preferred comedy format.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30286090/f8819d55-e2f5-40b0-92f0-790735ac8a37.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-music">music</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/3/mitch-whitaker-and-berkley-tickets" class="title">Mitch Whitaker and Berkley</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/artichoke-music" class="venue">Artichoke Music</a></div>
+        <div class="reason">Mitch Whitaker and Berkley are indie folk/singer-songwriters, which aligns well with the preferred indie folk genre.</div>
+        <div class="tags"><span class="tag">indie folk</span><span class="tag">singer-songwriter</span></div>
+        
+      </div>
+    </article>
+  </section>
+<section class="day"><h2>Tuesday, May 5</h2>
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30941291/130486e9-d62f-4421-bbfe-0c101b7c53e9.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/5/stand-up-101-graduation-showcase-tickets" class="title">Stand-up 101 Graduation Showcase</a></h3>
+        <div class="presenter">Helium Presents:</div>
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">This event is explicitly a stand-up showcase, which is a preferred comedy format.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+        
+      </div>
+    </article>
+  </section>
+<section class="day"><h2>Wednesday, May 6</h2>
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/30631068/962bcd14-325e-482a-a1a4-62e3e7ea37a0.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">7</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/6/crash-dummies-tickets" class="title">Crash Dummies</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">The event is at Helium Comedy Club, which primarily hosts standup, aligning with preferences.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+        
+      </div>
+    </article>
+  </section>
+<section class="day"><h2>Thursday, May 7</h2>
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29368196/6c3a01e4-31c1-4667-ab71-0b17fc19dc02.png')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">9</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">7:30PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/7/josh-wolf-tickets" class="title">Josh Wolf</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/helium-comedy-club-portland" class="venue">Helium Comedy Club</a></div>
+        <div class="reason">Josh Wolf is a known standup comedian, which aligns with the taste profile.</div>
+        <div class="tags"><span class="tag">standup</span></div>
+        
+      </div>
+    </article>
+  
+
+    <article class="event">
+      <div class="thumb" style="background-image:url('https://assets0.dostuffmedia.com/uploads/aws_asset/aws_asset/29568847/a05a01bf-5c70-4cfa-9915-dda97315fc52.jpg')"></div>
+      <div class="event-body">
+        <div class="event-head">
+          <span class="score">8</span>
+          <span class="category category-comedy">comedy</span>
+          
+          <span class="time">10:00PM</span>
+        </div>
+        <h3><a href="https://dopdx.com/events/2026/5/7/roast-battle-portland-tickets" class="title">Roast Battle Portland</a></h3>
+        
+        <div class="venue-line"><a href="https://dopdx.com/venues/funhouse-lounge" class="venue">Funhouse Lounge</a></div>
+        <div class="reason">A roast battle is a form of standup comedy, which is a preferred format.</div>
+        <div class="tags"><span class="tag">standup</span><span class="tag">roast</span></div>
+        
       </div>
     </article>
   </section>
@@ -503,9 +509,10 @@
   Source: <a href="https://dopdx.com/" style="color:var(--accent)">dopdx.com</a>
   <div class="tokens">
          Built with gemini-2.5-flash —
-         14,997 tokens
-         (6,001 in / 2,762 out)
+         24,879 tokens
+         (9,096 in / 3,718 out)
        </div>
 </footer>
+
 </body>
 </html>
