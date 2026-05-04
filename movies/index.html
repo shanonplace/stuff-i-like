@@ -39,8 +39,8 @@
     border: 1px solid var(--border);
   }
   nav a.active { color: #111; background: var(--accent); border-color: var(--accent); }
-  .day { margin-bottom: 28px; }
-  .day h2 {
+  .venue { margin-bottom: 32px; }
+  .venue h2 {
     position: sticky;
     top: 0;
     background: var(--bg);
@@ -52,9 +52,11 @@
     letter-spacing: 0.05em;
     border-bottom: 1px solid var(--border);
   }
-  .event {
+  .venue h2 a { color: inherit; text-decoration: none; }
+  .venue h2 a:hover { text-decoration: underline; }
+  .movie {
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 80px 1fr;
     gap: 12px;
     padding: 12px;
     margin-bottom: 10px;
@@ -63,31 +65,49 @@
     border-radius: 8px;
   }
   .thumb {
-    width: 72px;
-    height: 96px;
+    width: 80px;
+    height: 110px;
     background-size: cover;
     background-position: center;
     background-color: #222;
     border-radius: 6px;
   }
   .thumb-empty { background: #222; }
-  .event-body { min-width: 0; }
-  .event-head {
+  .movie-body { min-width: 0; }
+  .movie h3 {
+    margin: 0 0 2px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+  .title { color: var(--fg); text-decoration: none; }
+  .title:hover { text-decoration: underline; }
+  .meta-line { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .synopsis {
+    color: #cfcfd6;
+    font-size: 13px;
+    margin-top: 6px;
+  }
+  .screenings { margin-top: 8px; }
+  .screening {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
     align-items: center;
-    font-size: 12px;
+    gap: 6px;
+    padding: 4px 0;
+    font-size: 13px;
+    border-top: 1px dashed var(--border);
+  }
+  .screening:first-child { border-top: none; }
+  .screening-date {
     color: var(--muted);
-    margin-bottom: 4px;
+    min-width: 78px;
+    font-variant-numeric: tabular-nums;
   }
-  .sold-out {
-    color: #ff6b6b;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 11px;
+  .screening-times {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
   }
-  .time { margin-left: auto; display: flex; flex-wrap: wrap; gap: 4px; }
   .showtime {
     background: #26262c;
     color: var(--fg);
@@ -96,21 +116,11 @@
     font-size: 12px;
     font-weight: 500;
   }
-  .event h3 {
-    margin: 2px 0 2px;
-    font-size: 16px;
-    line-height: 1.25;
-  }
-  .title { color: var(--fg); text-decoration: none; }
-  .title:hover { text-decoration: underline; }
-  .venue-line { font-size: 13px; margin-top: 2px; }
-  .venue { color: var(--accent); text-decoration: none; }
-  .venue:hover { text-decoration: underline; }
-  .meta-line { color: var(--muted); font-size: 12px; margin-top: 2px; }
-  .synopsis {
-    color: #cfcfd6;
-    font-size: 13px;
-    margin-top: 6px;
+  .sold-out {
+    color: #ff6b6b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
   }
   footer {
     margin-top: 24px;
@@ -121,9 +131,10 @@
     text-align: center;
   }
   @media (max-width: 480px) {
-    .event { grid-template-columns: 56px 1fr; padding: 10px; }
-    .thumb { width: 56px; height: 84px; }
-    .event h3 { font-size: 15px; }
+    .movie { grid-template-columns: 60px 1fr; padding: 10px; }
+    .thumb { width: 60px; height: 84px; }
+    .movie h3 { font-size: 15px; }
+    .screening-date { min-width: 70px; }
   }
 </style>
 </head>
@@ -132,1077 +143,692 @@
   <h1>Stuff I like</h1>
   <div class="meta">
     Indie cinema showtimes ·
-    71 screenings across 24 days ·
+    33 films, 71 screenings ·
     updated 2026-05-04
   </div>
   <nav><a href="../shanon/">shanon</a><a href="../bert/">bert</a><a href="./" class="active">movies</a></nav>
 </header>
-<section class="day"><h2>Monday, May 4</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=q1mhjnhxckz7zpe81y7vahg9w4&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98440?siteToken=q1mhjnhxckz7zpe81y7vahg9w4" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Power Station Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98721?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">St. Johns Theater &amp; Pub</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Bagdad Theater</a></h2>
+    
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/98226?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
         <div class="meta-line">120 min</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 8</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 9</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 10</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 11</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 12</span>
+    <span class="screening-times"><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 13</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=dxh5gsd3m9ydpr3xep9rs82ax4&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98554?siteToken=dxh5gsd3m9ydpr3xep9rs82ax4" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Grand Lodge Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=wh74yr6fq3am4qbkh72fhcyr4g&amp;code=0000003582&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">1pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99037?siteToken=wh74yr6fq3am4qbkh72fhcyr4g" class="title">Anchorman: The Legend of Ron Burgundy</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Kennedy School Theater</a></div>
-        <div class="meta-line">94 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=24e09182c145b0b26864cd6ca3f2ebfc&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt12042730/?ref_=fn_t_1" class="title">Project Hail Mary</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">165 min · PG13</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=97a64042b7af6aa3116e295ec558d745&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:20pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt31514146/?ref_=fn_t_1" class="title">I Swear</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=zm3drrwk0vq0zf44k078xwsxz4&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98505?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Anderson School Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=afd0fbfe5f93e78bbe41de6d6cc288be&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_4_tt_7_nm_1_in_0_q_the%20devil%20" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · PG13</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=c73ecb8a17fb3e073337a1d81fe33bf1&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">110 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=cafvhqf5p6x6x3znk99h6a4mzc&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98518?siteToken=cafvhqf5p6x6x3znk99h6a4mzc" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Old St. Francis Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=1jaj4c8vy161vh1fm24s0v9rg0&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98384?siteToken=1jaj4c8vy161vh1fm24s0v9rg0" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Olympic Club Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001503&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18597?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://stjohnscinema.com/" class="venue">St. Johns Twin Cinemas</a></div>
-        <div class="meta-line">120 min · PG-13 · Comedy</div>
-        <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway Magazine in 20th Ce…</div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001487&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4:30pm</span><span class="showtime">7:35pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18598?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Michael</a></h3>
-        <div class="venue-line"><a href="https://stjohnscinema.com/" class="venue">St. Johns Twin Cinemas</a></div>
-        <div class="meta-line">130 min · PG-13 · Biography</div>
-        <div class="synopsis">MICHAEL is the cinematic portrayal of the life and legacy of one of the most influential artists the world has ever known. The film tells the story of Michael Jackson’s life beyond the music, tracing his journey from the discovery of his ex…</div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/IG-Story-A-Love-Letter-To-Handsome-John-scaled.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="sold-out">Sold Out</span>
-          <span class="time"><span class="showtime">6:00pm</span></span>
-        </div>
-        <h3><a href="https://cstpdx.com/event/a-love-letter-to-handsome-john/" class="title">A Love Letter to Handsome John</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
-        
-        <div class="synopsis">SOLD OUT
-A film by Otis Gibbs. An intimate portrait of Todd Snider in the last year of his life. What starts as a film about gratitude, and a way to say thank you to John Prine, becomes a rare glimpse of the artist at home in his most quiet…</div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=40df0ad487abbf89baef049b1f1346d0&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">6:45pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt33071426/?ref_=fn_t_1" class="title">The Drama</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">110 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/IG-Story-A-Love-Letter-To-Handsome-John-scaled.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">8:00pm</span></span>
-        </div>
-        <h3><a href="https://cstpdx.com/event/a-love-letter-to-handsome-john-2/" class="title">A Love Letter to Handsome John</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
-        
-        <div class="synopsis">A film by Otis Gibbs. An intimate portrait of Todd Snider in the last year of his life. What starts as a film about gratitude, and a way to say thank you to John Prine, becomes a rare glimpse of the artist at home in his most quiet moments.</div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Tuesday, May 5</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=zm3drrwk0vq0zf44k078xwsxz4&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">11am</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98513?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Devil Wears Prada 2 (OCAP)</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Anderson School Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/98227?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2 (OCAP)</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
         <div class="meta-line">120 min</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 12</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=24e09182c145b0b26864cd6ca3f2ebfc&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt12042730/?ref_=fn_t_1" class="title">Project Hail Mary</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">165 min · PG13</div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98677?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
+        <div class="meta-line">132 min</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 22</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span><span class="showtime">10:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 23</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span><span class="showtime">10:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 24</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 25</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 27</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 28</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 29</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 30</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 31</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, Jun 1</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, Jun 2</span>
+    <span class="screening-times"><span class="showtime">7pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, Jun 3</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=97a64042b7af6aa3116e295ec558d745&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:20pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt31514146/?ref_=fn_t_1" class="title">I Swear</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · R</div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98684?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu (OCAP)</a></h3>
+        <div class="meta-line">132 min</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, Jun 2</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:15pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=afd0fbfe5f93e78bbe41de6d6cc288be&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_4_tt_7_nm_1_in_0_q_the%20devil%20" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · PG13</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
+  </section>
+<section class="venue">
+    <h2><a href="https://www.laurelhursttheater.com/">Laurelhurst Theater</a></h2>
+    
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=c73ecb8a17fb3e073337a1d81fe33bf1&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
         <div class="meta-line">110 min · R</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001503&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18601?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://stjohnscinema.com/" class="venue">St. Johns Twin Cinemas</a></div>
-        <div class="meta-line">120 min · PG-13 · Comedy</div>
-        <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway Magazine in 20th Ce…</div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=afd0fbfe5f93e78bbe41de6d6cc288be&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_4_tt_7_nm_1_in_0_q_the%20devil%20" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">125 min · PG13</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001487&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4:30pm</span><span class="showtime">7:35pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18602?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Michael</a></h3>
-        <div class="venue-line"><a href="https://stjohnscinema.com/" class="venue">St. Johns Twin Cinemas</a></div>
-        <div class="meta-line">130 min · PG-13 · Biography</div>
-        <div class="synopsis">MICHAEL is the cinematic portrayal of the life and legacy of one of the most influential artists the world has ever known. The film tells the story of Michael Jackson’s life beyond the music, tracing his journey from the discovery of his ex…</div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=97a64042b7af6aa3116e295ec558d745&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt31514146/?ref_=fn_t_1" class="title">I Swear</a></h3>
+        <div class="meta-line">125 min · R</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">3:20pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">3:20pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">3:20pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=40df0ad487abbf89baef049b1f1346d0&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">6:45pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt33071426/?ref_=fn_t_1" class="title">The Drama</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
         <div class="meta-line">110 min · R</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">6:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">6:45pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98241?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/01/being-john-malkovich.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7:00pm</span></span>
-        </div>
-        <h3><a href="https://cstpdx.com/event/being-john-malkovich/" class="title">Being John Malkovich</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
-        
-        <div class="synopsis">Montucky Cold Snacks presents a $5 movie night! Special drink and popcorn combo discount available at the show.</div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/roach-trip-ART-vert-typev2-scaled.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">9:00pm</span></span>
-        </div>
-        <h3><a href="https://cstpdx.com/event/roach-trip/" class="title">Roach Trip</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
-        
-        <div class="synopsis">Join actress Clare McNulty (Search Party, Fort Tilden) in person for the Portland premiere of her directorial debut.</div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Wednesday, May 6</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98228?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=0ed9e18e1ef67d1a8a35ba3a88af86cf&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt12042730/?ref_=fn_t_1" class="title">Project Hail Mary (open caption)</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">165 min · PG13</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=587ed293f3e3776e78fd87dc71bb4b80&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:20pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt31514146/?ref_=fn_t_1" class="title">I Swear (open caption)</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=da80f72b1f83cd18027096c44d0f2702&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_3_tt_7_nm_1_in_0_q_the%20dev" class="title">The Devil Wears Prada 2 (open caption)</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · PG13</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=6b228e4ac70c7d3836d1bb0205fcfd44&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum (open caption)</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">110 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001503&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18605?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://stjohnscinema.com/" class="venue">St. Johns Twin Cinemas</a></div>
-        <div class="meta-line">120 min · PG-13 · Comedy</div>
-        <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway Magazine in 20th Ce…</div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001487&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">4:30pm</span><span class="showtime">7:35pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18606?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Michael</a></h3>
-        <div class="venue-line"><a href="https://stjohnscinema.com/" class="venue">St. Johns Twin Cinemas</a></div>
-        <div class="meta-line">130 min · PG-13 · Biography</div>
-        <div class="synopsis">MICHAEL is the cinematic portrayal of the life and legacy of one of the most influential artists the world has ever known. The film tells the story of Michael Jackson’s life beyond the music, tracing his journey from the discovery of his ex…</div>
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=d6d7c8e9dbbfdec713f8274c061b3020&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">6:45pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt33071426/?ref_=fn_t_1" class="title">The Drama (open caption)</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">110 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/cofpirates.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7:00pm</span></span>
-        </div>
-        <h3><a href="https://cstpdx.com/event/city-of-pirates-1983-church-of-film/" class="title">CITY OF PIRATES (1983) (Church of Film)</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
-        
-        <div class="synopsis">Graceful, damned Isidore wanders through life as though it were a dream fractured or decomposing. A homicidal boy named Malo, her husband and other self, purifies her world with blood, fire and violence.</div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Thursday, May 7</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98229?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=24e09182c145b0b26864cd6ca3f2ebfc&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt12042730/?ref_=fn_t_1" class="title">Project Hail Mary</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
         <div class="meta-line">165 min · PG13</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=97a64042b7af6aa3116e295ec558d745&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:20pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt31514146/?ref_=fn_t_1" class="title">I Swear</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
-        <div class="meta-line">125 min · R</div>
-        
-      </div>
-    </article>
-  
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=afd0fbfe5f93e78bbe41de6d6cc288be&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_4_tt_7_nm_1_in_0_q_the%20devil%20" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=da80f72b1f83cd18027096c44d0f2702&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_3_tt_7_nm_1_in_0_q_the%20dev" class="title">The Devil Wears Prada 2 (open caption)</a></h3>
         <div class="meta-line">125 min · PG13</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=c73ecb8a17fb3e073337a1d81fe33bf1&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
-        </div>
-        <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=6b228e4ac70c7d3836d1bb0205fcfd44&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum (open caption)</a></h3>
         <div class="meta-line">110 min · R</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">3:50pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=587ed293f3e3776e78fd87dc71bb4b80&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt31514146/?ref_=fn_t_1" class="title">I Swear (open caption)</a></h3>
+        <div class="meta-line">125 min · R</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">3:20pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=d6d7c8e9dbbfdec713f8274c061b3020&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt33071426/?ref_=fn_t_1" class="title">The Drama (open caption)</a></h3>
+        <div class="meta-line">110 min · R</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">6:45pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=0ed9e18e1ef67d1a8a35ba3a88af86cf&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt12042730/?ref_=fn_t_1" class="title">Project Hail Mary (open caption)</a></h3>
+        <div class="meta-line">165 min · PG13</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">3:00pm</span><span class="showtime">6:15pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=49d99a4dec21af953726e76c74b8c071&amp;code=full')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">6:45pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt32565993/?ref_=fn_t_1" class="title">The Sheep Detectives</a></h3>
-        <div class="venue-line"><a href="https://www.laurelhursttheater.com/" class="venue">Laurelhurst Theater</a></div>
         <div class="meta-line">115 min · PG</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">6:45pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/Waking-Up-premiere-poster-scaled.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          <span class="sold-out">Sold Out</span>
-          <span class="time"><span class="showtime">7:30pm</span></span>
-        </div>
-        <h3><a href="https://cstpdx.com/event/waking-up-from-a-nap-on-a-long-day-of-doing-nothing/" class="title">Waking Up From A Nap On A Long Day Of Doing Nothing</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
+  </section>
+<section class="venue">
+    <h2><a href="https://cstpdx.com/">Clinton Street Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/IG-Story-A-Love-Letter-To-Handsome-John-scaled.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://cstpdx.com/event/a-love-letter-to-handsome-john/" class="title">A Love Letter to Handsome John</a></h3>
         
         <div class="synopsis">SOLD OUT
-With the guidance of his best friend and mystical grandfather, a young painter –anxiously awaiting his first gallery show –embarks on a surreal skateboard odyssey through Portland to discover the true value of his art.</div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Friday, May 8</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98659?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
+A film by Otis Gibbs. An intimate portrait of Todd Snider in the last year of his life. What starts as a film about gratitude, and a way to say thank you to John Prine, becomes a rare glimpse of the artist at ho…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">6:00pm</span></span>
+    <span class="sold-out">Sold Out</span>
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">8:00pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/01/being-john-malkovich.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://cstpdx.com/event/being-john-malkovich/" class="title">Being John Malkovich</a></h3>
+        
+        <div class="synopsis">Montucky Cold Snacks presents a $5 movie night! Special drink and popcorn combo discount available at the show.</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">7:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/roach-trip-ART-vert-typev2-scaled.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://cstpdx.com/event/roach-trip/" class="title">Roach Trip</a></h3>
+        
+        <div class="synopsis">Join actress Clare McNulty (Search Party, Fort Tilden) in person for the Portland premiere of her directorial debut.</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">9:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/cofpirates.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://cstpdx.com/event/city-of-pirates-1983-church-of-film/" class="title">CITY OF PIRATES (1983) (Church of Film)</a></h3>
+        
+        <div class="synopsis">Graceful, damned Isidore wanders through life as though it were a dream fractured or decomposing. A homicidal boy named Malo, her husband and other self, purifies her world with blood, fire and violence.</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">7:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/Waking-Up-premiere-poster-scaled.png')"></div>
+      <div class="movie-body">
+        <h3><a href="https://cstpdx.com/event/waking-up-from-a-nap-on-a-long-day-of-doing-nothing/" class="title">Waking Up From A Nap On A Long Day Of Doing Nothing</a></h3>
+        
+        <div class="synopsis">SOLD OUT
+With the guidance of his best friend and mystical grandfather, a young painter –anxiously awaiting his first gallery show –embarks on a surreal skateboard odyssey through Portland to discover the true value of h…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 7</span>
+    <span class="screening-times"><span class="showtime">7:30pm</span></span>
+    <span class="sold-out">Sold Out</span>
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/03/sun-blood-stories-poster-websize.png')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">8:00pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/sun-blood-stories/" class="title">Sun Blood Stories</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
         
         <div class="synopsis">Fueled by paranoia, hope, wonder and rage, Sun Blood Stories has gone through several iterations over the last 12 years, sometimes creating music within the sub-genre described as psych fuzz.</div>
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Saturday, May 9</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98660?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Fri, May 8</span>
+    <span class="screening-times"><span class="showtime">8:00pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/03/enemy-film-poster-1-scaled.jpg')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7:00pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/enemy-2013-with-javier-gullon/" class="title">Enemy (2013) with Javier Gullón</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
         
         <div class="synopsis">Screenwriter Javier Gullón in attendance for a special post-screening Q&amp;A of Denis Villeneuve&#39;s surreal, psychological thriller.</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sat, May 9</span>
+    <span class="screening-times"><span class="showtime">7:00pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
+    <article class="movie">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2023/07/rhps-virgins.webp')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">11:00pm</span></span>
-        </div>
+      <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/the-rocky-horror-picture-show-with-sinophelia-17/" class="title">The Rocky Horror Picture Show with Sinophelia</a></h3>
-        <div class="venue-line"><a href="https://cstpdx.com/" class="venue">Clinton Street Theater</a></div>
         
         <div class="synopsis">Come watch our intimate, scaled-back screening of the ultimate cult movie that has played weekly at the Clinton Street Theater since 1978 with everyone’s ancient royal vampire, Thee Countess Sinophelia!</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sat, May 9</span>
+    <span class="screening-times"><span class="showtime">11:00pm</span></span>
+    
+  </div></div>
       </div>
     </article>
+  
   </section>
-<section class="day"><h2>Sunday, May 10</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98661?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Monday, May 11</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98662?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Tuesday, May 12</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98663?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2 (OCAP)</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
+<section class="venue">
+    <h2><a href="https://stjohnscinema.com/">St. Johns Twin Cinemas</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001503&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.useast.veezi.com/purchase/18597?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min · PG-13 · Comedy</div>
+        <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98675?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001487&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.useast.veezi.com/purchase/18598?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Michael</a></h3>
+        <div class="meta-line">130 min · PG-13 · Biography</div>
+        <div class="synopsis">MICHAEL is the cinematic portrayal of the life and legacy of one of the most influential artists the world has ever known. The film tells the story of Michael Jackson’s life beyond the music, tracing his journey from the…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">4:30pm</span><span class="showtime">7:35pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">4:30pm</span><span class="showtime">7:35pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 6</span>
+    <span class="screening-times"><span class="showtime">4:30pm</span><span class="showtime">7:35pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Anderson School Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=zm3drrwk0vq0zf44k078xwsxz4&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98505?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Devil Wears Prada 2</a></h3>
         <div class="meta-line">120 min</div>
         
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Wednesday, May 13</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98664?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">120 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Thursday, May 21</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98677?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Friday, May 22</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span><span class="showtime">10:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98680?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Saturday, May 23</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span><span class="showtime">10:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98681?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Sunday, May 24</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98682?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Monday, May 25</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98683?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Tuesday, May 26</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98684?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu (OCAP)</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
       </div>
     </article>
   
 
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98698?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=zm3drrwk0vq0zf44k078xwsxz4&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98513?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Devil Wears Prada 2 (OCAP)</a></h3>
+        <div class="meta-line">120 min</div>
         
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Wednesday, May 27</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98685?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Thursday, May 28</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98686?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Friday, May 29</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98703?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Saturday, May 30</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98704?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Sunday, May 31</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98705?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Monday, June 1</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98706?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
-  </section>
-<section class="day"><h2>Tuesday, June 2</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98707?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu (OCAP)</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Tue, May 5</span>
+    <span class="screening-times"><span class="showtime">11am</span></span>
+    
+  </div></div>
       </div>
     </article>
   
-
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98719?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
-        
-      </div>
-    </article>
   </section>
-<section class="day"><h2>Wednesday, June 3</h2>
-    <article class="event">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
-      <div class="event-body">
-        <div class="event-head">
-          
-          <span class="time"><span class="showtime">12pm</span><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
-        </div>
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98708?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
-        <div class="venue-line"><a href="https://www.mcmenamins.com/" class="venue">Bagdad Theater</a></div>
-        <div class="meta-line">132 min</div>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Grand Lodge Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=dxh5gsd3m9ydpr3xep9rs82ax4&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98554?siteToken=dxh5gsd3m9ydpr3xep9rs82ax4" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
         
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
       </div>
     </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Kennedy School Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=wh74yr6fq3am4qbkh72fhcyr4g&amp;code=0000003582&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99037?siteToken=wh74yr6fq3am4qbkh72fhcyr4g" class="title">Anchorman: The Legend of Ron Burgundy</a></h3>
+        <div class="meta-line">94 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">1pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Old St. Francis Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=cafvhqf5p6x6x3znk99h6a4mzc&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98518?siteToken=cafvhqf5p6x6x3znk99h6a4mzc" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Olympic Club Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=1jaj4c8vy161vh1fm24s0v9rg0&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98384?siteToken=1jaj4c8vy161vh1fm24s0v9rg0" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Power Station Theater</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=q1mhjnhxckz7zpe81y7vahg9w4&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98440?siteToken=q1mhjnhxckz7zpe81y7vahg9w4" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">St. Johns Theater &amp; Pub</a></h2>
+    
+    <article class="movie">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98721?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Mon, May 4</span>
+    <span class="screening-times"><span class="showtime">12pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
   </section>
 <footer>
   Sources: Laurelhurst, St. Johns Twin Cinemas, McMenamins, Clinton Street Theater
