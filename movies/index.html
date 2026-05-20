@@ -39,6 +39,45 @@
     border: 1px solid var(--border);
   }
   nav a.active { color: #111; background: var(--accent); border-color: var(--accent); }
+  .search {
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .search input {
+    flex: 1;
+    background: var(--panel);
+    color: var(--fg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 14px;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .search input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+  .search-count {
+    color: var(--muted);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .venue.hidden, .movie.hidden { display: none; }
+  #no-results {
+    display: none;
+    padding: 24px;
+    text-align: center;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+  }
+  body.searching #no-results.show { display: block; }
   .venue { margin-bottom: 32px; }
   .venue h2 {
     position: sticky;
@@ -143,25 +182,32 @@
   <h1>Stuff I like</h1>
   <div class="meta">
     Indie cinema showtimes ·
-    213 films, 393 screenings ·
+    217 films, 387 screenings ·
     updated 2026-05-20
   </div>
   <nav><a href="../shanon/">shanon</a><a href="../bert/">bert</a><a href="./" class="active">movies</a></nav>
+  <div class="search">
+    <input
+      id="search"
+      type="search"
+      placeholder="Search by title, venue, genre…"
+      autocomplete="off"
+      spellcheck="false"
+      aria-label="Search movies"
+    >
+    <span class="search-count" id="search-count"></span>
+  </div>
 </header>
 <section class="venue">
     <h2><a href="https://www.academytheaterpdx.com/">Academy Theater</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="angel&#39;s egg academy theater in an underwater city, a young girl takes care of a large egg she holds carefully in her arms – a treasure that she believes is an angel’s egg. a boy with a gun arrives in search of a bird he saw in his dream.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/7f/31/7f318c501c079e70febd7728874826b6.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012425000006" class="title">Angel&#39;s Egg</a></h3>
+        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012427000006" class="title">Angel&#39;s Egg</a></h3>
         <div class="meta-line">71 min · NR</div>
         <div class="synopsis">In an underwater city, a young girl takes care of a large egg she holds carefully in her arms – a treasure that she believes is an angel’s egg. A boy with a gun arrives in search of a bird he saw in his dream.</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7:30pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
     <span class="screening-times"><span class="showtime">4:30pm</span></span>
     
@@ -174,19 +220,34 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="drive (2011) academy theater driver is a hollywood stunt driver, flipping cars and spinning wheels for formulaic hollywood action pictures. but as he likes to say, &quot;it&#39;s only part time.&quot; by night he&#39;s the getaway driver for heist operations, navigating the labyrinth of l.a. streets with a mechanical precision that makes him one of the best in the business.">
+      <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/4a/35/4a3581cd30d706ea36adfd486322ce7f.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012428000006" class="title">Drive (2011)</a></h3>
+        <div class="meta-line">100 min · R</div>
+        <div class="synopsis">Driver is a Hollywood stunt driver, flipping cars and spinning wheels for formulaic Hollywood action pictures. But as he likes to say, &quot;It&#39;s only part time.&quot; By night he&#39;s the getaway driver for heist operations, navigat…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">7:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the devil wears prada 2 academy theater twenty years after making their iconic turns as miranda, andy, emily and nigel—meryl streep, anne hathaway, emily blunt and stanley tucci return to the fashionable streets of new york city and the sleek offices of runway magazine in 20th century studios’ “the devil wears prada 2,” the eagerly awaited sequel to the 2006 phenomenon that defined a generation.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/a2/cf/a2cff748cd7692ccb7ea1632a8a2097c.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012260000005" class="title">The Devil Wears Prada 2</a></h3>
+        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012257000005" class="title">The Devil Wears Prada 2</a></h3>
         <div class="meta-line">119 min · PG-13</div>
         <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway…</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
+    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
     
   </div><div class="screening">
     <span class="screening-date">Thu, May 21</span>
@@ -197,19 +258,15 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="obsession academy theater after breaking the mysterious “one wish willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/6e/fc/6efc85105b03c2f6ccfaec05a81cf9ff.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012490000007" class="title">Obsession</a></h3>
+        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012492000007" class="title">Obsession</a></h3>
         <div class="meta-line">109 min · R</div>
         <div class="synopsis">After breaking the mysterious “One Wish Willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4pm</span><span class="showtime">7:15pm</span></span>
+    <span class="screening-times"><span class="showtime">4pm</span><span class="showtime">7:15pm</span></span>
     
   </div><div class="screening">
     <span class="screening-date">Thu, May 21</span>
@@ -248,18 +305,15 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the asphalt jungle academy theater a major heist goes off as planned, but then double crosses, bad luck and solid police work cause everything to unravel.
+">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/b2/a4/b2a488506941c8c93edc83b6d6776d1c.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012426000006" class="title">The Asphalt Jungle</a></h3>
+        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012429000006" class="title">The Asphalt Jungle</a></h3>
         <div class="meta-line">112 min</div>
         <div class="synopsis">A major heist goes off as planned, but then double crosses, bad luck and solid police work cause everything to unravel.
 </div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">1pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Thu, May 21</span>
     <span class="screening-times"><span class="showtime">1pm</span><span class="showtime">7pm</span></span>
     
@@ -268,26 +322,7 @@
     </article>
   
 
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/4a/35/4a3581cd30d706ea36adfd486322ce7f.jpg')"></div>
-      <div class="movie-body">
-        <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012428000006" class="title">Drive (2011)</a></h3>
-        <div class="meta-line">100 min · R</div>
-        <div class="synopsis">Driver is a Hollywood stunt driver, flipping cars and spinning wheels for formulaic Hollywood action pictures. But as he likes to say, &quot;It&#39;s only part time.&quot; By night he&#39;s the getaway driver for heist operations, navigat…</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">7:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">4:15pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
+    <article class="movie" data-search="a woman under the influence academy theater this uncompromising portrait of domestic turmoil details the emotional breakdown of a suburban housewife and her family’s struggle to save her from herself. gena rowlands and peter falk give unforgettably harrowing performances as a married couple deeply in love but unable to express their ardor in terms the other can understand. this landmark american film is perhaps the most beloved work from the extraordinary john cassavetes.">
       <div class="thumb" style="background-image:url('https://cms-assets.webediamovies.pro/production/365/f704b3fa39aec6f5640ff117e6869d26.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012436000006" class="title">A Woman Under the Influence</a></h3>
@@ -326,7 +361,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="perfect blue (pafekuto buru) (1997) academy theater mima was a pop idol, worshipped by the masses until fashion dictated otherwise. in order to salvage her career, she is advised to drop music and pursue acting. a soap opera role is offered but mima&#39;s character is less clean cut than desired. regardless, she agrees and events take a turn for the worse. she begins to feel reality slip, that her life is not her own. she discovers (imagines) her identical twin, a mirror image that hasn&#39;t given up singing. internet sites appear describing every intimate detail of her life and a figure stalks her from the shadows. her friends and associates are threatened (and killed) as mima descends into a dangerous world of paranoid delusion. she fears for her life and must unravel fact from illusion in order to stay alive. perfect blue represents a major change from traditional anime subject matter, analysing the pop icon phenomenon, fame and its psychological impact on the performer.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/78/20/7820d8b7e1b0ffa6fd45ad4896586278.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012433000006" class="title">Perfect Blue (Pafekuto buru) (1997)</a></h3>
@@ -365,7 +400,9 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="hired hand, the (1971) academy theater having been at the forefront of america&#39;s here-and-now with easy rider and the counterculture movies of roger corman, peter fonda retreated to the past and the american west for his directorial debut, the hired hand. fonda plays harry, a man who deserted his wife and child to explore the wide-open plains with his best friend archie (warren oates). tired of the life he decides to finally return home in order to rekindle his marriage and reacquaint himself with his daughter. 
+
+scripted by alan sharp (ulzana’s raid, night moves), shot by vilmos zsigmond (blow out, the long goodbye) and with a standout score by folk musician bruce langhorne, the hired hand is a beautiful, elegiac picture that ranks alongside the greats as one of the finest westerns the seventies had to offer.">
       <div class="thumb" style="background-image:url('https://cms-assets.webediamovies.pro/production/365/0be8b776afd3754d94d690721aebfea7.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012449000006" class="title">Hired Hand, The (1971)</a></h3>
@@ -404,7 +441,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="i love boosters academy theater a crew of professional shoplifters takes aim at a cutthroat fashion maven. it&#39;s like community service.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/87/97/87977ab841eb69b94218e024955372ef.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012700000007" class="title">I Love Boosters</a></h3>
@@ -471,7 +508,9 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the adventures of robin hood (1938) academy theater when king richard the lion heart (ian hunter) leaves to fight in the crusades, the evil prince john (claude rains) plots with the help of the sir guy of gisbourne (basil rathbone) to usurp the throne. now, only sir robin of locksley (flynn), who earns the title of robin hood, stands with a daring band of merry men to defend the realm, its people and his king.
+
+">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/f9/9d/f99d0b7a56d402ab5dfa18fe58564fe0.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012582000006" class="title">The Adventures of Robin Hood (1938)</a></h3>
@@ -510,7 +549,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="blue velvet academy theater this sensual mystery thriller is about strange happenings in a small north carolina town. a college student stumbles across a bizarre mystery and wants to know more, perhaps too much more. the strange world he&#39;s found lurking beneath his hometown&#39;s picture-postcard veneer is about to become much stranger. it is also an unforgettably fascinating and foreboding world.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/99/8e/998e09397481bbcf786883b86a7ed4e7.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012580000006" class="title">Blue Velvet</a></h3>
@@ -549,7 +588,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="safe (1995) academy theater julianne moore gives a breakthrough performance as carol white, a los angeles housewife in the late 1980s who comes down with a debilitating illness. after the doctors she sees can give her no clear diagnosis, she comes to believe that she has frighteningly extreme environmental allergies. a profoundly unsettling work from the great american director todd haynes, safe functions on multiple levels: as a prescient commentary on self-help culture, as a metaphor for the aids crisis, as a drama about class and social estrangement, and as a horror film about what you cannot see. this revelatory drama was named the best film of the 1990s in a village voice poll of more than fifty critics.">
       <div class="thumb" style="background-image:url('https://cms-assets.webediamovies.pro/production/365/efd0de81e3cc3175eb2628acd132ceb9.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012579000006" class="title">Safe (1995)</a></h3>
@@ -588,7 +627,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="backrooms academy theater a strange doorway appears in the basement of a furniture showroom.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/4e/34/4e34162d7489c977da291d752efb2b68.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012746000005" class="title">Backrooms</a></h3>
@@ -638,12 +677,16 @@
     <span class="screening-date">Mon, Jun 8</span>
     <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:30pm</span><span class="showtime">7:30pm</span></span>
     
+  </div><div class="screening">
+    <span class="screening-date">Tue, Jun 9</span>
+    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:30pm</span><span class="showtime">7:30pm</span></span>
+    
   </div></div>
       </div>
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="fellini&#39;s 8½ (otto e mezzo) academy theater director federico fellini&#39;s autobiographical fantasy is a portrait of the filmmaker as a circus ringmaster.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/39/bc/39bc062e1c950c3a39e3d817c9afa7d4.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012603000006" class="title">Fellini&#39;s 8½ (Otto e Mezzo)</a></h3>
@@ -665,12 +708,16 @@
     <span class="screening-date">Mon, Jun 8</span>
     <span class="screening-times"><span class="showtime">1pm</span></span>
     
+  </div><div class="screening">
+    <span class="screening-date">Tue, Jun 9</span>
+    <span class="screening-times"><span class="showtime">7pm</span></span>
+    
   </div></div>
       </div>
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the muppet movie academy theater kermit the frog is persuaded by agent dom deluise to pursue a career in hollywood. along the way, kermit picks up fozzie bear, miss piggy, gonzo, and a motley crew of other muppets with similar aspirations. meanwhile, kermit must elude the grasp of a frog-leg restaurant magnate.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/22/c4/22c4f4c233703a9efff90fe1c8900975.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012604000006" class="title">The Muppet Movie</a></h3>
@@ -692,12 +739,16 @@
     <span class="screening-date">Mon, Jun 8</span>
     <span class="screening-times"><span class="showtime">7pm</span></span>
     
+  </div><div class="screening">
+    <span class="screening-date">Tue, Jun 9</span>
+    <span class="screening-times"><span class="showtime">4pm</span></span>
+    
   </div></div>
       </div>
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="d.e.b.s. academy theater recruited by the u.s. government for their unique abilities to lie, cheat and fight, as well as exceptional sat scores--four plaid-skirted high school girls are drafted to be secret agents. they soon become highly trained, fabulously dressed, top-secret agents, known as d.e.b.s. while on a stakeout of international master criminal lucy diamond, a massive shootout occurs and d.e.b.s.&#39; star agent amy is captured by lucy&#39;s notoriously dangerous gang. only after escaping does amy realize why good girls love bad girls and stages her own kidnapping and begins flirting with the dark side.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/7d/16/7d16ded0cd34ffb43c4831342c0980ea.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012606000006" class="title">D.E.B.S.</a></h3>
@@ -719,12 +770,17 @@
     <span class="screening-date">Mon, Jun 8</span>
     <span class="screening-times"><span class="showtime">4pm</span></span>
     
+  </div><div class="screening">
+    <span class="screening-date">Tue, Jun 9</span>
+    <span class="screening-times"><span class="showtime">1pm</span></span>
+    
   </div></div>
       </div>
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="black strawberry academy theater &quot;black strawberry is a wild romp through the dark heart of portland, oregon, a land of dead sex workers, killer pimps, recreational cultists and lonely ghosts. eschewing a straightforward narrative in favor of kaleidoscopic collage, this unique indie has a voice seemingly haunted by forces.
+the film offers different theories behind a rash of killings: rival pimps, possession demons, revenge ghosts, and lost vibes; as the investigation unfolds, we&#39;re reminded of real-life portland serial killers homer lee jackson and jesse lee calhoun.">
       <div class="thumb" style="background-image:url('https://all.web.img.acsta.net/img/94/23/9423137d48679442a1b379fc0db13501.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://booking.academytheaterpdx.com/startticketing/862660/012622000007" class="title">Black Strawberry</a></h3>
@@ -742,7 +798,7 @@
 <section class="venue">
     <h2><a href="https://tomorrowtheater.org/">Tomorrow Theater</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="el topo tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12142320/fKoNBTATc94rUYLq8VyypS24LUw-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/725871/" class="title">El Topo</a></h3>
@@ -757,7 +813,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="lost highway tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12142843/fdTtij6H0sX9AzIjUeynh5zbfm7-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/715060/" class="title">Lost Highway</a></h3>
@@ -772,7 +828,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="grape culture // tragic comedy w/ toni nagy and seraphina supernova tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/10142315/GrapeCultureTomorrowTheater.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/703938/" class="title">Grape Culture // Tragic Comedy w/ Toni Nagy and Seraphina Supernova</a></h3>
@@ -787,7 +843,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the president&#39;s cake tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/11123935/abdw51gf1oy3UWllAwqGl6WdkiS-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/700748/" class="title">The President&#39;s Cake</a></h3>
@@ -802,7 +858,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="oldboy tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12115224/pWDtjs568ZfOTMbURQBYuT4Qxka.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/701585/" class="title">Oldboy</a></h3>
@@ -817,7 +873,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="carte blanche: michelle zauner tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/19164918/Michelle-Zauner.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/714822/" class="title">Carte Blanche: Michelle Zauner</a></h3>
@@ -832,7 +888,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="atropia tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/11130412/qurd8tG5E2T20QihO0ysaJCzAjL-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/700752/" class="title">Atropia</a></h3>
@@ -847,7 +903,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="paralyzed by hope: the maria bamford story // screening  followed by a q&amp;amp;a with maria bamford tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/15124353/64vZphYwwBK3F6rPuH7zaMKnCac.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/744098/" class="title">Paralyzed by Hope: The Maria Bamford Story // screening  followed by a Q&amp;amp;A with Maria Bamford</a></h3>
@@ -862,7 +918,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="holy shit! improv w/ ify nwadiwe, jordan myrick, casey feigh, and colton dunn // presented by kickstand comedy tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/19165934/Holy-Shit.png')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/708988/" class="title">Holy Shit! Improv w/ Ify Nwadiwe, Jordan Myrick, Casey Feigh, and Colton Dunn // Presented by Kickstand Comedy</a></h3>
@@ -877,7 +933,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="suck it up, buttercup: trust and betrayal - healthcare in america tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08093901/SIUB_Flyer_4x5.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/735022/" class="title">Suck It Up, Buttercup: Trust and Betrayal - Healthcare in America</a></h3>
@@ -892,7 +948,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="reeling w/ filmmaker q&amp;amp;a x the future of film is female tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/06125042/Reeling_Logos_Poster.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/728573/" class="title">Reeling w/ Filmmaker Q&amp;amp;A x The Future of Film Is Female</a></h3>
@@ -907,7 +963,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="chez jolie coiffure x hairspiracy tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08130406/hzYHritxU5mdv0ahill4IEHLgfO.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/750231/" class="title">Chez Jolie Coiffure x HairSpiracy</a></h3>
@@ -922,7 +978,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="elvira: mistress of the dark movie bingo w/ violet hex tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08123410/tr9ajyzn0xRZhgp30SMdwhzFNJW-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/750299/" class="title">Elvira: Mistress of the Dark Movie Bingo w/ Violet Hex</a></h3>
@@ -937,7 +993,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="she&#39;s the man tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/23132203/ms9vdHyBLgAj0txnMWI9djGpDGp.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/751092/" class="title">She&#39;s the Man</a></h3>
@@ -952,7 +1008,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="viking film festival // sub-basement studios tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/04144622/VFF-10-1-1.png')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/761850/" class="title">Viking Film Festival // Sub-Basement Studios</a></h3>
@@ -967,7 +1023,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="john lilly and the earth coincidence control office tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08094903/9g9o04DdZg1GLv2dobWBHDBvMQO.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/734236/" class="title">John Lilly and the Earth Coincidence Control Office</a></h3>
@@ -982,7 +1038,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="delicatessen (4k restoration) tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12143318/gNtOgQHxE5B8e08zuNRAdDpmK5Z.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/711059/" class="title">Delicatessen (4K Restoration)</a></h3>
@@ -997,7 +1053,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="shakedown x lesbian cinema club tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/10115135/lWmX5qh1h0j5gZdQmbcboTOUpop.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/736045/" class="title">Shakedown x Lesbian Cinema Club</a></h3>
@@ -1012,7 +1068,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="space: a meditation on the meaning of art tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/12124530/Poster-18x24-04_2026-v1r4-DIGITAL-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/757675/" class="title">Space: A Meditation on the Meaning of Art</a></h3>
@@ -1027,7 +1083,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the science of sleep with risk/reward&#39;s sarah k. finn tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/23121031/8bummqwU6MV65ZJvNtKx8Y3NIEk.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/751112/" class="title">The Science of Sleep with Risk/Reward&#39;s Sarah K. Finn</a></h3>
@@ -1042,7 +1098,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="climax tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/31110556/47IXH2iEWwX0F7vIyGXaKQ0psBG-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/725927/" class="title">Climax</a></h3>
@@ -1057,7 +1113,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the virgin suicides x movie book club tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12092540/1NCQtXPQnaHRjOZVmktA9BSM35F.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/701591/" class="title">The Virgin Suicides x Movie Book Club</a></h3>
@@ -1072,7 +1128,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="blue is the warmest color tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/31112838/kgUk1wti2cvrptIgUz0VTAtSF6w.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/725932/" class="title">Blue Is the Warmest Color</a></h3>
@@ -1087,7 +1143,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="nt live: the audience // presented by third rail repertory theatre tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/04193240/THEAUDIENCEPOSTER.png')"></div>
       <div class="movie-body">
         <h3><a href="https://third-rail-rep.my.salesforce-sites.com/ticket/#/events/a0SUv000000oohZMAQ" class="title">NT Live: The Audience // Presented by Third Rail Repertory Theatre</a></h3>
@@ -1102,7 +1158,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="roar x hannah may cumming tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08131034/oN7FZe6qNAAb46MpgbIyua8fJy7-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/744152/" class="title">Roar x Hannah May Cumming</a></h3>
@@ -1117,7 +1173,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="seeds // a juneteenth evening curated by kalimah abioto tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/06123213/6H0TJFuihYtXeXc5WhrT5kyVtnv.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/732973/" class="title">Seeds // A Juneteenth Evening Curated by Kalimah Abioto</a></h3>
@@ -1132,7 +1188,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="ghost in the machine: protecting human creativity in the age of ai  tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/15134943/GHOST_POSTER_LARGE-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/742078/" class="title">Ghost in the Machine: Protecting Human Creativity in the Age of AI </a></h3>
@@ -1147,7 +1203,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="inherent vice tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12143850/pfVua7TzzttOh3RTOuBqT7xN0oY-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/715767/" class="title">Inherent Vice</a></h3>
@@ -1162,7 +1218,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="boogie nights tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/12144041/wnE24UPCPQsQnbBOu4zVE2qaDNm-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/715776/" class="title">Boogie Nights</a></h3>
@@ -1177,7 +1233,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="winters, nebraska // q&amp;amp;a w/ director &amp;amp; cast tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/14155508/Winters-Nebraska-Official-Poster-2025-1-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/734357/" class="title">Winters, Nebraska // Q&amp;amp;A w/ Director &amp;amp; Cast</a></h3>
@@ -1192,7 +1248,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="parasite smell-o-vision tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/07132826/7IiTTgloJzvGI1TAYymCfbfl3vT-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/735091/" class="title">Parasite Smell-o-vision</a></h3>
@@ -1207,7 +1263,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="asco: without permission tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/20124303/ASCO_One_Sheet-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/750305/" class="title">ASCO: Without Permission</a></h3>
@@ -1222,7 +1278,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="turnstile: never enough tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/02101451/xhKw33Hn53cuFkSzvvbZpX1lS2I.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/728931/" class="title">Turnstile: Never Enough</a></h3>
@@ -1237,7 +1293,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="sense and sensibility crafternoon x ritual dyes tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/14154820/cBK2yL3HqhFvIVd7lLtazWlRZPR.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/741991/" class="title">Sense and Sensibility Crafternoon x Ritual Dyes</a></h3>
@@ -1252,7 +1308,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="erupcja tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/06085428/1OMiyrpkZvu5YmWbPBtwDQHZsu1.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/761853/" class="title">Erupcja</a></h3>
@@ -1267,7 +1323,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the people&#39;s joker tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/13141128/80yak1h7YcNpMOsfSbThfwKYKK4-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767676/" class="title">The People&#39;s Joker</a></h3>
@@ -1282,7 +1338,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the devil wears prada movie bingo w/ violet hex tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/26103003/8912AsVuS7Sj915apArUFbv6F9L-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/723723/" class="title">The Devil Wears Prada Movie Bingo w/ Violet Hex</a></h3>
@@ -1297,7 +1353,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="tough shit with oregon humanities tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2025/11/18131500/Untitled-design.png')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/762352/" class="title">Tough Shit with Oregon Humanities</a></h3>
@@ -1312,7 +1368,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="mary oliver: saved by the beauty of the world x qdoc tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/17113559/1f64s7LOfFx8r0bYvtGE46GtgRW-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/744157/" class="title">Mary Oliver: Saved by the Beauty of the World x QDoc</a></h3>
@@ -1327,7 +1383,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="a league of their own x portland arts week tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08130811/f9BtX6wYOwJUyfUr4vyeT3COz6m-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/736330/" class="title">A League of Their Own x Portland Arts Week</a></h3>
@@ -1342,7 +1398,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="bring it on x portland arts week tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08101801/bnVby0qI0dS7YunbShP7mw68HY3.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/734221/" class="title">Bring It On x Portland Arts Week</a></h3>
@@ -1357,7 +1413,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="pink narcissus w/ live score by kraftwitch tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/26105559/kaZiiGE6820KyFF9XkzPB9Rx9qn.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/723739/" class="title">Pink Narcissus w/ Live Score by kraftwitch</a></h3>
@@ -1372,7 +1428,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the birdcage tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/07122937/hU2XeckncHS61TWZKDtw1BrKmOO-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/737118/" class="title">The Birdcage</a></h3>
@@ -1387,7 +1443,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the adventures of priscilla, queen of the desert tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/06161449/kJ7syYXEJgSBmBfSnF3Can9cK1J-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/761966/" class="title">The Adventures of Priscilla, Queen of the Desert</a></h3>
@@ -1402,7 +1458,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="she&#39;s the he tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/14111401/z5zlRWl4DNrhGLB4st2Kn68HaUq-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/769648/" class="title">She&#39;s the He</a></h3>
@@ -1417,7 +1473,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="teenage sex and death at camp miasma w/ jane schoenbrun &amp;amp; hannah einbinder tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/14084517/Teenage-Sex-and-Death-at-Camp-Miasma-Temp-Poster-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/768078/" class="title">Teenage Sex and Death at Camp Miasma w/ Jane Schoenbrun &amp;amp; Hannah Einbinder</a></h3>
@@ -1432,7 +1488,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="bend it like beckham x portland arts week tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08101118/2dzSBmFWWqt8NbnubJKIWU21Y86.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/734334/" class="title">Bend It Like Beckham x Portland Arts Week</a></h3>
@@ -1447,7 +1503,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="give me the ball! x portland arts week tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08155701/et5zMzsVgC9sXqPico8I6ij9cNZ.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767527/" class="title">Give Me the Ball! x Portland Arts Week</a></h3>
@@ -1462,7 +1518,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="jaws (4k restoration) tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/31134122/tjbLSFwi0I3phZwh8zoHWNfbsEp.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/726136/" class="title">Jaws (4K Restoration)</a></h3>
@@ -1477,7 +1533,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the travel companion w/ q&amp;amp;a tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/28131039/9kgNTjPBpD6eshgvgRIPD0G9wBC.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/757103/" class="title">The Travel Companion w/ Q&amp;amp;A</a></h3>
@@ -1492,7 +1548,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="monty python and the holy grail tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/08120349/h3rksLHevpCbHfSoaUXm85nt2CH.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/735053/" class="title">Monty Python and the Holy Grail</a></h3>
@@ -1507,7 +1563,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="picnic at hanging rock tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08160027/7BAXwmFN4pZDNb9N6kzmAAwdssi.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/770514/" class="title">Picnic at Hanging Rock</a></h3>
@@ -1522,7 +1578,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="nashville tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/02151906/twl4ovyjb8muFKvZmcCDzPR0hy1.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/731038/" class="title">Nashville</a></h3>
@@ -1537,7 +1593,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="one flew over the cuckoo&#39;s nest tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/02153937/kjWsMh72V6d8KRLV4EOoSJLT1H7.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/731034/" class="title">One Flew Over the Cuckoo&#39;s Nest</a></h3>
@@ -1552,7 +1608,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="skate dreams x skate like a girl tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/13142034/8f6l85s9BD1kaOK504R6JMcrhWT.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767648/" class="title">Skate Dreams x Skate Like A Girl</a></h3>
@@ -1567,7 +1623,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="catvideofest 2026 // saturday 3:30 p.m. tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/23131524/CVF26_pre_01a_3000-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/715134/" class="title">CatVideoFest 2026 // Saturday 3:30 p.m.</a></h3>
@@ -1582,7 +1638,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="catvideofest 2026 // saturday 6 p.m. tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/23131524/CVF26_pre_01a_3000-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/715138/" class="title">CatVideoFest 2026 // Saturday 6 p.m.</a></h3>
@@ -1597,7 +1653,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the remains of the day x movie book club tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/26144525/uDGDtqSvuch324WnM7Ukdp1bCAQ.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/723896/" class="title">The Remains of the Day x Movie Book Club</a></h3>
@@ -1612,7 +1668,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="catvideofest 2026 // sunday 7 p.m. tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/23131524/CVF26_pre_01a_3000-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/715143/" class="title">CatVideoFest 2026 // Sunday 7 p.m.</a></h3>
@@ -1627,7 +1683,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="catvideofest 2026 // saturday 4 p.m. tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/03/23131524/CVF26_pre_01a_3000-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/731020/" class="title">CatVideoFest 2026 // Saturday 4 p.m.</a></h3>
@@ -1642,7 +1698,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="heathers tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/22145759/dGbVfM4WlM7uvIbyRehfPZUIgp2.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/751106/" class="title">Heathers</a></h3>
@@ -1657,7 +1713,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="desert hearts tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/01110316/klAHoWOZgL8sR74Tnl7K7z4Lziq-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/735049/" class="title">Desert Hearts</a></h3>
@@ -1672,7 +1728,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="mala noche tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08163856/gAtkeNjk054tEl3jCHtF1wOFCx1.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767699/" class="title">Mala Noche</a></h3>
@@ -1687,7 +1743,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="drugstore cowboy tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08164536/1URuvqnZcwL4wy8hIIwQ9p9AxVq-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767718/" class="title">Drugstore Cowboy</a></h3>
@@ -1702,7 +1758,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="body heat tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08160343/5LipPcaW1J9IjAP7TOTesw8OcMS.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767761/" class="title">Body Heat</a></h3>
@@ -1717,7 +1773,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="do the right thing (4k restoration) tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08163456/63rmSDPahrH7C1gEFYzRuIBAN9W.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767776/" class="title">Do the Right Thing (4K Restoration)</a></h3>
@@ -1732,7 +1788,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="rear window  (4k restoration) tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08163035/ILVF0eJxHMddjxeQhswFtpMtqx.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767781/" class="title">Rear Window  (4K Restoration)</a></h3>
@@ -1747,7 +1803,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="call me by your name tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/08162746/mZ4gBdfkhP9tvLH1DO4m4HYtiyi-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/767790/" class="title">Call Me by Your Name</a></h3>
@@ -1762,7 +1818,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the mummy  (4k restoration) tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/13104152/yhIsVvcUm7QxzLfT6HW2wLf5ajY-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/770580/" class="title">The Mummy  (4K Restoration)</a></h3>
@@ -1777,7 +1833,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="cookie queens tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/05/12122302/ySJhSBFE9mgnjftxjIFrRPZYrvQ.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/770599/" class="title">Cookie Queens</a></h3>
@@ -1792,7 +1848,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="mean girls tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/10103350/fXm3YKXAEjx7d2tIWDg9TfRZtsU.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/770612/" class="title">Mean Girls</a></h3>
@@ -1807,7 +1863,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="american psycho tomorrow theater">
       <div class="thumb" style="background-image:url('https://s3.amazonaws.com/nightjarprod/content/uploads/sites/243/2026/04/10103940/9uGHEgsiUXjCNq8wdq4r49YL8A1-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://tomorrowtheater.org/purchase/770626/" class="title">American Psycho</a></h3>
@@ -1825,52 +1881,7 @@
 <section class="venue">
     <h2><a href="https://hollywoodtheatre.org/">Hollywood Theatre</a></h2>
     
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/one-spoon1.jpg?fit=540%2C303&amp;ssl=1')"></div>
-      <div class="movie-body">
-        <h3><a href="https://hollywoodtheatre.org/show/rzas-one-spoon-of-chocolate/" class="title">RZA’S ONE SPOON OF CHOCOLATE</a></h3>
-        
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">11:30am</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/Stephanie_Problem.png?fit=540%2C304&amp;ssl=1')"></div>
-      <div class="movie-body">
-        <h3><a href="https://hollywoodtheatre.org/show/best-of-pps-film-festival-2026/" class="title">Best of PPS Film Festival 2026</a></h3>
-        
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">12:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/et-extra-t1.jpg?fit=540%2C335&amp;ssl=1')"></div>
-      <div class="movie-body">
-        <h3><a href="https://hollywoodtheatre.org/show/e-t-the-extra-terrestrial/" class="title">E.T. THE EXTRA TERRESTRIAL</a></h3>
-        
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">11:30am</span><span class="showtime">12:30pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
+    <article class="movie" data-search="no bears hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/02/06_No-Bears_LOGO.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/no-bears/" class="title">NO BEARS</a></h3>
@@ -1885,7 +1896,22 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="e.t. the extra terrestrial hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/et-extra-t1.jpg?fit=540%2C335&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/e-t-the-extra-terrestrial/" class="title">E.T. THE EXTRA TERRESTRIAL</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">11:30am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="woman in the dunes in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2025/12/woman-in-the-dunes-still-cropped.jpg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/woman-in-the-dunes-in-35mm/" class="title">WOMAN IN THE DUNES in 35mm</a></h3>
@@ -1900,7 +1926,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="i love boosters hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/iloveboosters1.jpg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/i-love-boosters/" class="title">I LOVE BOOSTERS</a></h3>
@@ -1915,7 +1941,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the treasure of the sierra madre hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/sierra-treasure1.jpg?fit=540%2C349&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-treasure-of-the-sierra-madre/" class="title">THE TREASURE OF THE SIERRA MADRE</a></h3>
@@ -1930,7 +1956,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="terminator 2: judgment day in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2024/04/terminator-2.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/terminator-2-judgment-day-in-35mm/" class="title">Terminator 2: Judgment Day in 35mm</a></h3>
@@ -1945,7 +1971,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="aliens in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/aliens2.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/aliens-in-35mm/" class="title">ALIENS in 35mm</a></h3>
@@ -1960,7 +1986,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="taxi driver in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/taxidriverfin1.jpg?fit=540%2C327&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/taxi-driver-in-35mm/" class="title">TAXI DRIVER in 35mm</a></h3>
@@ -1975,7 +2001,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="antichrist hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/antichrist1.jpg?fit=540%2C359&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/antichrist/" class="title">ANTICHRIST</a></h3>
@@ -1990,7 +2016,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="it was just an accident hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/02/07_It-Was-Just-an-Accident_LOGO.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/it-was-just-an-accident/" class="title">IT WAS JUST AN ACCIDENT</a></h3>
@@ -2005,7 +2031,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="backrooms hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/backrooms1.jpg?fit=540%2C289&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/backrooms/" class="title">BACKROOMS</a></h3>
@@ -2020,7 +2046,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="terrorvision hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/terrorvision-1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/terrorvision-2/" class="title">TERRORVISION</a></h3>
@@ -2035,7 +2061,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="2026 award winners: cosmos hollywood theatre format: dcp">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2025/12/Photo-3-Cosmos_Stills_20240424_169_1-2.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/cosmos/" class="title">2026 AWARD WINNERS: COSMOS</a></h3>
@@ -2050,7 +2076,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the garbage pail kids movie hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/garbage-pail.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-garbage-pail-kids-movie/" class="title">THE GARBAGE PAIL KIDS MOVIE</a></h3>
@@ -2065,7 +2091,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="stop making sense hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2024/04/stop-making-sense-1.jpg?fit=540%2C319&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/stop-making-sense/" class="title">STOP MAKING SENSE</a></h3>
@@ -2080,7 +2106,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="rrr hollywood theatre format: dcp">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2024/04/RRR-1.jpg?fit=540%2C281&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/rrr/" class="title">RRR</a></h3>
@@ -2095,7 +2121,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the fisher king hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/fishrking1.jpg?fit=540%2C367&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-fisher-king/" class="title">THE FISHER KING</a></h3>
@@ -2110,7 +2136,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="repo man in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/repomann2.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/repo-man-in-35mm/" class="title">REPO MAN in 35mm</a></h3>
@@ -2125,7 +2151,22 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the cyprus tigers hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/cyprustigers_16x9.jpg?fit=540%2C303&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/the-cyprus-tigers/" class="title">THE CYPRUS TIGERS</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Tue, Jun 2</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="cruel jaws hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/crueljaws.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/cruel-jaws/" class="title">CRUEL JAWS</a></h3>
@@ -2140,7 +2181,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="starcrash hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/starcrash1.jpg?fit=512%2C288&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/starcrash/" class="title">STARCRASH</a></h3>
@@ -2155,7 +2196,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="bringing up baby hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/bringing-up-baby1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/bringing-up-baby/" class="title">BRINGING UP BABY</a></h3>
@@ -2170,7 +2211,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="golden eighties hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/golden-80s.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/golden-eighties/" class="title">GOLDEN EIGHTIES</a></h3>
@@ -2185,7 +2226,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="a very brady sequel hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/averybradysequel.jpg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/a-very-brady-sequel/" class="title">A VERY BRADY SEQUEL</a></h3>
@@ -2200,7 +2241,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="some like it hot hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/some-like-it-hot-marilyn.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/some-like-it-hot-2/" class="title">SOME LIKE IT HOT</a></h3>
@@ -2215,7 +2256,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="an evening with mary bronstein hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/03/mb.png?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/an-evening-with-mary-bronstein/" class="title">AN EVENING WITH MARY BRONSTEIN</a></h3>
@@ -2230,7 +2271,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="invincible shaolin in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/invincibleshaolin1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/invincible-shaolin-in-35mm/" class="title">INVINCIBLE SHAOLIN in 35mm</a></h3>
@@ -2245,7 +2286,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="breaking away hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/breakingaway1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/breaking-away/" class="title">BREAKING AWAY</a></h3>
@@ -2260,7 +2301,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="clash of the titans in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/titans1.jpg?fit=540%2C313&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/clash-of-the-titans-in-35mm/" class="title">CLASH OF THE TITANS in 35mm</a></h3>
@@ -2275,7 +2316,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="gamera vs. zigra hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/03/Gamera-vs-Zigra-Hollywood-ticketing.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/gamera-vs-zigra/" class="title">GAMERA VS. ZIGRA</a></h3>
@@ -2290,7 +2331,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="paddington hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/PADDINGTON-Family-Pictures.jpg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/paddington/" class="title">PADDINGTON</a></h3>
@@ -2305,7 +2346,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="dick hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/IMG_1102.jpeg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/dick/" class="title">DICK</a></h3>
@@ -2320,7 +2361,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="hello mary lou: prom night 2 hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/mary-lou-prom1.jpg?fit=540%2C297&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/hello-mary-lou-prom-night-2/" class="title">HELLO MARY LOU: PROM NIGHT 2</a></h3>
@@ -2335,7 +2376,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="five collage films in 16mm hollywood theatre format: 16mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/EE_06-18_CollageFilms_Still.jpg?fit=540%2C351&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/five-collage-films-in-16mm/" class="title">FIVE COLLAGE FILMS in 16mm</a></h3>
@@ -2350,7 +2391,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="irreversible in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/irreversible1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/irreversible-in-35mm/" class="title">IRREVERSIBLE in 35mm</a></h3>
@@ -2365,7 +2406,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="this is fine hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/thisisfine-promo-charlie-edits-5.jpeg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/this-is-fine/" class="title">THIS IS FINE</a></h3>
@@ -2380,7 +2421,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the deer hunter in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/deer-hunter1.jpg?fit=465%2C279&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-deer-hunter-in-35mm/" class="title">THE DEER HUNTER in 35mm</a></h3>
@@ -2395,7 +2436,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the three stooges celebration hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/stooges1.jpg?fit=540%2C329&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-three-stooges-celebration/" class="title">THE THREE STOOGES CELEBRATION</a></h3>
@@ -2410,7 +2451,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="cannibal holocaust hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/cannibal-holocaust1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/cannibal-holocaust/" class="title">CANNIBAL HOLOCAUST</a></h3>
@@ -2425,7 +2466,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the turin horse hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/turin-hose1.jpg?fit=496%2C289&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-turin-horse/" class="title">THE TURIN HORSE</a></h3>
@@ -2440,7 +2481,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="star 80 in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/star801.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/star-80-in-35mm/" class="title">STAR 80 in 35mm</a></h3>
@@ -2455,7 +2496,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="a simple plan in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/simple-pan1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/a-simple-plan-in-35mm/" class="title">A SIMPLE PLAN in 35mm</a></h3>
@@ -2470,7 +2511,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="1986 – the year in videos! hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/1986_Year_In_Video_thumb_Jun_2026.jpg?fit=540%2C304&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/1986-the-year-in-videos/" class="title">1986 – The Year in Videos!</a></h3>
@@ -2485,7 +2526,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="threads hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/threads1.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/threads/" class="title">THREADS</a></h3>
@@ -2500,7 +2541,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the omen hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/04/THE-OMEN.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-omen/" class="title">THE OMEN</a></h3>
@@ -2515,7 +2556,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="scream hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/scream.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/scream/" class="title">SCREAM</a></h3>
@@ -2530,7 +2571,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="mrs. doubtfire hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/mrsdoubtfire.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/mrs-doubtfire/" class="title">MRS. DOUBTFIRE</a></h3>
@@ -2545,7 +2586,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="black lodge burlesque: lost highway hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/losthighway.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/black-lodge-burlesque-lost-highway/" class="title">Black Lodge Burlesque: LOST HIGHWAY</a></h3>
@@ -2560,7 +2601,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the beast from 20,000 fathoms in 35mm hollywood theatre format: 35mm">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/beast-201.jpg?fit=540%2C294&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/the-beast-from-20000-fathoms-in-35mm/" class="title">THE BEAST FROM 20,000 FATHOMS in 35mm</a></h3>
@@ -2575,7 +2616,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="creepshow hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/creepshowking2.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/creepshow/" class="title">CREEPSHOW</a></h3>
@@ -2590,7 +2631,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="uncle sam with william lustig hollywood theatre">
       <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/uncle-sam.jpg?fit=540%2C303&amp;ssl=1')"></div>
       <div class="movie-body">
         <h3><a href="https://hollywoodtheatre.org/show/uncle-sam-with-william-lustig/" class="title">UNCLE SAM with William Lustig</a></h3>
@@ -2604,18 +2645,183 @@
       </div>
     </article>
   
+
+    <article class="movie" data-search="noir city 2026 festival pass hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/reg.jpg?fit=540%2C303&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/noir-city-2026-festival-pass/" class="title">Noir City 2026 Festival Pass</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Fri, Aug 21</span>
+    <span class="screening-times"><span class="showtime">10:30am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="noir city 2026 vip festival pass hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/VIP.jpg?fit=540%2C303&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/noir-city-2026-vip-festival-pass/" class="title">Noir City 2026 VIP Festival Pass</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Fri, Aug 21</span>
+    <span class="screening-times"><span class="showtime">10:30am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="black angel hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/Black-Angel_2000-1570.jpg?fit=539%2C304&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/black-angel/" class="title">BLACK ANGEL</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Fri, Aug 21</span>
+    <span class="screening-times"><span class="showtime">11:30am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the man i love hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/The-Man-I-Love_2560-1913.jpg?fit=539%2C303&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/the-man-i-love/" class="title">THE MAN I LOVE</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Fri, Aug 21</span>
+    <span class="screening-times"><span class="showtime">1:30pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="a conversation with eddie muller &amp; book signing hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/A-CONVERSATION-WITH-EDDIE-MULLER-01.jpg?fit=540%2C305&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/a-conversation-with-eddie-muller-book-signing-3/" class="title">A Conversation with Eddie Muller &amp; Book Signing</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sat, Aug 22</span>
+    <span class="screening-times"><span class="showtime">6:00am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="a man called adam hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/A-Man-Called-Adam_1750-1080.jpg?fit=540%2C304&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/a-man-called-adam/" class="title">A MAN CALLED ADAM</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sat, Aug 22</span>
+    <span class="screening-times"><span class="showtime">9:00am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="to have and have not hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/To-have-and-have-not_2560-2016.jpg?fit=539%2C304&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/to-have-and-have-not/" class="title">TO HAVE AND HAVE NOT</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sat, Aug 22</span>
+    <span class="screening-times"><span class="showtime">11:30am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the yellow canary hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/TheYellowCanary_BarbaraEden_PatBoone.jpg?fit=540%2C303&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/the-yellow-canary/" class="title">THE YELLOW CANARY</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sat, Aug 22</span>
+    <span class="screening-times"><span class="showtime">2:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the man with the golden arm hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/The-Man-with-the-Golden-Arm_2046-1293-1.jpg?fit=540%2C303&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/the-man-with-the-golden-arm/" class="title">THE MAN WITH THE GOLDEN ARM</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sun, Aug 23</span>
+    <span class="screening-times"><span class="showtime">9:00am</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the sweet smell of success hollywood theatre">
+      <div class="thumb" style="background-image:url('https://i0.wp.com/hollywoodtheatre.org/wp-content/uploads/2026/05/Sweet-Smell-of-Success_4467-2680.jpg?fit=540%2C304&amp;ssl=1')"></div>
+      <div class="movie-body">
+        <h3><a href="https://hollywoodtheatre.org/show/the-sweet-smell-of-success-2/" class="title">THE SWEET SMELL OF SUCCESS</a></h3>
+        
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Sun, Aug 23</span>
+    <span class="screening-times"><span class="showtime">12:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
   </section>
 <section class="venue">
     <h2><a href="https://www.cinema21.com/">Cinema 21</a></h2>
     
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_6278b3be-2035-493f-989c-e3a309fa52f4.jpg')"></div>
+    <article class="movie" data-search="days and nights in the forest (1970) cinema 21 new 4k restoration of the 1970 masterpiece&lt;br /&gt;&lt;br /&gt;a group of calcutta city slickers, including the well-off asim (soumitra chatterjee), the meek sanjoy (subhendu chatterjee) and the brutish hari (samit bhanja), head out for a weekend in the wilderness. before long, however, the friends find themselves neglecting nature in favor of hard drinking and hitting on the nearby tribeswomen. but as the men spend more time with the local people, they begin to realize that the social standings that mean so much to them hold no importance in the wild.">
+      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_44949fe6-4768-490b-8cd7-418367c836e7.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29962?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">The Drama</a></h3>
-        <div class="meta-line">106 min · R</div>
-        <div class="synopsis">A happily engaged couple is put to the test when an unexpected turn sends their wedding week off the rails.</div>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29961?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Days and Nights in the Forest (1970)</a></h3>
+        <div class="meta-line">116 min</div>
+        <div class="synopsis">NEW 4K RESTORATION OF THE 1970 MASTERPIECE&lt;br /&gt;&lt;br /&gt;A group of Calcutta city slickers, including the well-off Asim (Soumitra Chatterjee), the meek Sanjoy (Subhendu Chatterjee) and the brutish Hari (Samit Bhanja), head…</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">4:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="mother mary cinema 21 long-buried wounds rise to the surface when iconic pop star mother mary (anne hathaway) reunites with her estranged best friend and former costume designer sam anselm (michaela coel) on the eve of her comeback performance.">
+      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_1032476e-7c07-4a35-8c26-d51debed04e3.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29960?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Mother Mary</a></h3>
+        <div class="meta-line">110 min · R</div>
+        <div class="synopsis">Long-buried wounds rise to the surface when iconic pop star Mother Mary (Anne Hathaway) reunites with her estranged best friend and former costume designer Sam Anselm (Michaela Coel) on the eve of her comeback performanc…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 20</span>
     <span class="screening-times"><span class="showtime">6:50pm</span></span>
     
   </div></div>
@@ -2623,17 +2829,32 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="erupcja cinema 21 the combustible chemistry between a polish florist and a british tourist in this charming postcard of sapphic synchronicity.">
+      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_f3daadfa-6c96-4790-a0e1-02d5342c7b02.jpg')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29966?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Erupcja</a></h3>
+        <div class="meta-line">71 min</div>
+        <div class="synopsis">The combustible chemistry between a Polish florist and a British tourist in this charming postcard of sapphic synchronicity.</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">4:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">4:30pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="obsession cinema 21 after breaking the mysterious “one wish willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_6751b6b9-058d-480d-a0b7-4ecff8a8d606.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29877?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Obsession</a></h3>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29880?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Obsession</a></h3>
         <div class="meta-line">108 min · R</div>
         <div class="synopsis">After breaking the mysterious “One Wish Willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7:00pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
     <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:00pm</span></span>
     
@@ -2674,17 +2895,13 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="steal this story, please! cinema 21 **please note: these are regular shows of the film without q&amp;as ** &lt;br /&gt;&lt;br /&gt;undeterred by armed soldiers, smooth-talking politicians, and riot police, journalist amy goodman has reported some of the most consequential stories of our time. steal this story, please. is a gripping portrait of the trailblazer whose unwavering commitment to truth-telling spans three decades of turbulent history. from the front lines of global conflicts to the organized chaos of her daily news show democracy now!, goodman broadcasts stories and voices routinely silenced by commercial media. oscar-nominated filmmakers carl deal and tia lessin (trouble the water, the janes) take us behind the scenes with the warm, wisecracking granddaughter of an orthodox rabbi - raised in a tradition of asking hard questions - as she navigates a news landscape reshaped by technology, corporate consolidation, and political assaults on truth itself. urgent, provocative and unexpectedly funny, steal this story, please is both a call to action and a celebration of resistance, posing the question: what happens to democracy when the press surrenders to power?">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_1f5470d7-8a27-453a-a07b-ccb51f56156b.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29958?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Steal This Story, Please!</a></h3>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29959?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Steal This Story, Please!</a></h3>
         <div class="meta-line">103 min</div>
         <div class="synopsis">**Please note: these are regular shows of the film without Q&amp;As ** &lt;br /&gt;&lt;br /&gt;Undeterred by armed soldiers, smooth-talking politicians, and riot police, journalist Amy Goodman has reported some of the most consequential…</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
     <span class="screening-times"><span class="showtime">6:45pm</span></span>
     
@@ -2697,56 +2914,7 @@
     </article>
   
 
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_44949fe6-4768-490b-8cd7-418367c836e7.jpg')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29961?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Days and Nights in the Forest (1970)</a></h3>
-        <div class="meta-line">116 min</div>
-        <div class="synopsis">NEW 4K RESTORATION OF THE 1970 MASTERPIECE&lt;br /&gt;&lt;br /&gt;A group of Calcutta city slickers, including the well-off Asim (Soumitra Chatterjee), the meek Sanjoy (Subhendu Chatterjee) and the brutish Hari (Samit Bhanja), head…</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">4:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_1032476e-7c07-4a35-8c26-d51debed04e3.jpg')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29960?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Mother Mary</a></h3>
-        <div class="meta-line">110 min · R</div>
-        <div class="synopsis">Long-buried wounds rise to the surface when iconic pop star Mother Mary (Anne Hathaway) reunites with her estranged best friend and former costume designer Sam Anselm (Michaela Coel) on the eve of her comeback performanc…</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">6:50pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_f3daadfa-6c96-4790-a0e1-02d5342c7b02.jpg')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/29966?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Erupcja</a></h3>
-        <div class="meta-line">71 min</div>
-        <div class="synopsis">The combustible chemistry between a Polish florist and a British tourist in this charming postcard of sapphic synchronicity.</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">4:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">4:30pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
+    <article class="movie" data-search="i love boosters cinema 21 a crew of professional shoplifters takes aim at a cutthroat fashion maven. it&#39;s like community service.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_8c2f1335-29a7-4f49-92b8-d4bb9e18f7f2.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29846?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">I Love Boosters</a></h3>
@@ -2789,7 +2957,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="ghost in the machine cinema 21 ghost in the machine is a gripping and urgently relevant investigative documentary exposing the buried history of artificial intelligence, not as a neutral system of algorithms, but as a technology shaped by racism, misogyny, eugenics, and entrenched structures of power long before it entered everyday life. rejecting the notion of ai as inevitable or objective, the film traces how myths of progress and efficiency have obscured deeper political and cultural agendas, revealing the ideological foundations beneath the systems now reshaping modern society.&lt;br /&gt;&lt;br /&gt;structured as an eight-chapter inquiry, the film blends historical excavation with contemporary analysis to confront essential questions: who built these systems, whose values they encode, and who they benefit. directed by valerie veatch, whose sundance-premiering films me @ the zoo (hbo) and love child (hbo) examined how emerging technologies transform identity, power, and culture, ghost in the machine employs a bold yet accessible cinematic approach that is as unsettling as it is illuminating, offering a visceral understanding of a technology that now touches nearly every aspect of modern life.&lt;br /&gt;&lt;br /&gt;this is not a film about machines. it is a film about power. ghost in the machine interrogates who builds ai, who benefits from it, and who bears the cost. audiences around the world are requesting spaces to screen this mandatory film.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_02e72531-a14b-4f5c-83dc-e53160c13f97.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29790?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Ghost in the Machine</a></h3>
@@ -2804,7 +2972,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="silent friend cinema 21 it is set in the botanical garden of marburg, a medieval university town in germany, and tells three stories connected to a tree over a period of more than 100 years.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_110b3b54-232d-4bfd-82fa-c92a08338c47.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29920?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Silent Friend</a></h3>
@@ -2843,7 +3011,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="them! (1954) cinema 21 the earliest atomic tests in new mexico cause common ants to mutate into giant man-eating monsters that threaten civilization.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_f4c2c900-02c2-48d2-8a8e-fabec9f5d9de.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29563?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Them! (1954)</a></h3>
@@ -2858,7 +3026,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="backrooms cinema 21 a strange doorway appears in the basement of a furniture showroom.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_dcc58e20-0085-4141-aca8-23ee50f5a429.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29652?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Backrooms</a></h3>
@@ -2901,7 +3069,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="12 angry men (1957) cinema 21 a jury holdout attempts to prevent a miscarriage of justice by forcing his colleagues to reconsider the evidence.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_ac5ed939-b051-4f3a-9f83-28124eea1621.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29564?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">12 Angry Men (1957)</a></h3>
@@ -2916,7 +3084,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="trainspotting (30th anniversary) cinema 21 danny boyle&#39;s explosive film tracks the misadventures of young men in edinburgh trying to find their way out of joblessness, aimless relationships and drug addiction. some are successful, while others hopelessly are not. based on irvine walsh&#39;s novel, trainspotting melds grit with poetry, resulting in a film of harsh truths and stunning grace. ">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_68451824-5309-4ed0-a5a0-e680efa5b8ed.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29916?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Trainspotting (30th Anniversary)</a></h3>
@@ -2935,7 +3103,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the king of comedy (1983) cinema 21 rupert pupkin (robert de niro) is a failure in life but a celebrity in his own mind, hosting an imaginary talk show in his mother&#39;s basement. when he meets actual talk show host jerry langford (jerry lewis), he&#39;s convinced it will provide his big break, but langford isn&#39;t interested in the would-be comedian. undaunted, pupkin effectively stalks langford -- and when that doesn&#39;t work, he kidnaps him, offering his release in exchange for a guest spot on langford&#39;s show.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_0602e71e-a744-4d92-a4e4-86389aafaa8d.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29565?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">The King of Comedy (1983)</a></h3>
@@ -2950,7 +3118,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="do the right thing (1989) cinema 21 on the hottest day of summer, lee’s do the right thing turns a brooklyn block into a crucible of american race relations. comic banter—pizza orders, radio chatter—slowly gathers tension until a fight outside sal’s pizzeria ignites tragedy.&lt;br /&gt;&lt;br /&gt;formally dazzling, it pulses with ernest dickerson’s saturated colors and public enemy’s “fight the power” pounding like a greek chorus. acclaimed and feared on release, the film has endured as a live wire: exuberant, unflinching, and still crackling with the heat of its moment—and ours.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_c2297d7d-e038-4d51-b1f9-6bb07e40f973.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29566?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Do the Right Thing (1989)</a></h3>
@@ -2965,7 +3133,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="big shark cinema 21 the latest opus from the one and only tommy wiseau!! &lt;br /&gt;&lt;br /&gt;three firefighters (georgie, patrick, and tim) must save new orleans from a gigantic shark. can new orleans survive?">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_54514fc6-b1d8-4ffc-a556-022d92ef01d2.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29676?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">BIG SHARK</a></h3>
@@ -2980,7 +3148,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="house of games (1987) cinema 21 the pulitzer prize–winning playwright and screenwriter david mamet sat in the director’s chair for the first time for this sly, merciless thriller. lindsay crouse stars as a best-selling author and therapist who wants to help a client by making restitution for the money he owes to a gambler. after she meets the attractive cardsharp (joe mantegna), her own compulsions take hold as he lures her into his world of high-stakes deception. packed with razor-edged dialogue delivered with even-keeled precision by a cast of mamet regulars, house of games is as psychologically acute as it is full of twists and turns, a rich character study told with the cold calculation of a career con artist targeting his next mark.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_64090475-3f7e-45ba-9dfc-2ffdbfdd362e.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29567?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">House Of Games (1987)</a></h3>
@@ -2995,7 +3163,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="wings of desire (1987) cinema 21 two angels, damiel (bruno ganz) and cassiel (otto sander), glide through the streets of berlin, observing the bustling population, providing invisible rays of hope to the distressed but never interacting with them. when damiel falls in love with lonely trapeze artist marion (solveig dommartin), the angel longs to experience life in the physical world, and finds--with some words of wisdom from actor peter falk (playing himself) -- that it might be possible for him to take human form.">
       <div class="thumb" style="background-image:url('https://img.vwassets.com/cinema21.com/vertical_6cfe7a14-ff11-4546-bc4d-8f4652df5772.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/29568?siteToken=02fhxgcv98zq7pswjm69s8n9tc" class="title">Wings of Desire (1987)</a></h3>
@@ -3013,151 +3181,7 @@
 <section class="venue">
     <h2><a href="https://www.laurelhursttheater.com/">Laurelhurst Theater</a></h2>
     
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=e24dcaddef9cffe5721a6a33a1899a4c&amp;code=full')"></div>
-      <div class="movie-body">
-        <h3><a href="https://www.imdb.com/title/tt37287335/?ref_=fn_t_1" class="title">Obsession</a></h3>
-        <div class="meta-line">110 min · R</div>
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">7:00pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Fri, May 22</span>
-    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span><span class="showtime">9:10pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sat, May 23</span>
-    <span class="screening-times"><span class="showtime">1:00pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span><span class="showtime">9:10pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sun, May 24</span>
-    <span class="screening-times"><span class="showtime">1:00pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Mon, May 25</span>
-    <span class="screening-times"><span class="showtime">1:00pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Tue, May 26</span>
-    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 28</span>
-    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:30pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=49d99a4dec21af953726e76c74b8c071&amp;code=full')"></div>
-      <div class="movie-body">
-        <h3><a href="https://www.imdb.com/title/tt32565993/?ref_=fn_t_1" class="title">The Sheep Detectives</a></h3>
-        <div class="meta-line">115 min · PG</div>
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Fri, May 22</span>
-    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span><span class="showtime">9:00pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sat, May 23</span>
-    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span><span class="showtime">9:00pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sun, May 24</span>
-    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Mon, May 25</span>
-    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Tue, May 26</span>
-    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=c73ecb8a17fb3e073337a1d81fe33bf1&amp;code=full')"></div>
-      <div class="movie-body">
-        <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum</a></h3>
-        <div class="meta-line">110 min · R</div>
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">3:45pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=afd0fbfe5f93e78bbe41de6d6cc288be&amp;code=full')"></div>
-      <div class="movie-body">
-        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_4_tt_7_nm_1_in_0_q_the%20devil%20" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="meta-line">125 min · PG13</div>
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">3:15pm</span><span class="showtime">6:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">3:15pm</span><span class="showtime">6:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Fri, May 22</span>
-    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span><span class="showtime">9:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sat, May 23</span>
-    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span><span class="showtime">9:30pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sun, May 24</span>
-    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Mon, May 25</span>
-    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Tue, May 26</span>
-    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 28</span>
-    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
+    <article class="movie" data-search="obsession (open caption) laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=fd063d2407d11d4383ce17a83638d9b0&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt37287335/?ref_=fn_t_1" class="title">Obsession (open caption)</a></h3>
@@ -3176,7 +3200,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the sheep detectives (open caption) laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=ab1524636603ef23b4cc5ef2a77713c2&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt32565993/?ref_=fn_t_1" class="title">The Sheep Detectives (open caption)</a></h3>
@@ -3195,7 +3219,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the devil wears prada 2 (open caption) laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=da80f72b1f83cd18027096c44d0f2702&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_3_tt_7_nm_1_in_0_q_the%20dev" class="title">The Devil Wears Prada 2 (open caption)</a></h3>
@@ -3214,7 +3238,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="hokum (open caption) laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=6b228e4ac70c7d3836d1bb0205fcfd44&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum (open caption)</a></h3>
@@ -3229,7 +3253,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="i love boosters laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=c3a1ad59387960c5fc0d249833fdca96&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt30827810/?ref_=fn_t_1" class="title">I Love Boosters</a></h3>
@@ -3268,7 +3292,135 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="obsession laurelhurst theater">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=e24dcaddef9cffe5721a6a33a1899a4c&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt37287335/?ref_=fn_t_1" class="title">Obsession</a></h3>
+        <div class="meta-line">110 min · R</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">6:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 22</span>
+    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span><span class="showtime">9:10pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 23</span>
+    <span class="screening-times"><span class="showtime">1:00pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span><span class="showtime">9:10pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 24</span>
+    <span class="screening-times"><span class="showtime">1:00pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 25</span>
+    <span class="screening-times"><span class="showtime">1:00pm</span><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 28</span>
+    <span class="screening-times"><span class="showtime">3:45pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the sheep detectives laurelhurst theater">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=49d99a4dec21af953726e76c74b8c071&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt32565993/?ref_=fn_t_1" class="title">The Sheep Detectives</a></h3>
+        <div class="meta-line">115 min · PG</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">6:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 22</span>
+    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span><span class="showtime">9:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 23</span>
+    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span><span class="showtime">9:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 24</span>
+    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 25</span>
+    <span class="screening-times"><span class="showtime">12:45pm</span><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">4:00pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="hokum laurelhurst theater">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=c73ecb8a17fb3e073337a1d81fe33bf1&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt35672862/?ref_=fn_i_1" class="title">Hokum</a></h3>
+        <div class="meta-line">110 min · R</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">3:45pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="the devil wears prada 2 laurelhurst theater">
+      <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=afd0fbfe5f93e78bbe41de6d6cc288be&amp;code=full')"></div>
+      <div class="movie-body">
+        <h3><a href="https://www.imdb.com/title/tt33612209/?ref_=nv_sr_srsg_4_tt_7_nm_1_in_0_q_the%20devil%20" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">125 min · PG13</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">3:15pm</span><span class="showtime">6:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 22</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span><span class="showtime">9:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 23</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span><span class="showtime">9:30pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 24</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 25</span>
+    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 28</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7:00pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="i love boosters (open caption) laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=5362500f9cc4b2b2f398bf0cc128265a&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt30827810/?ref_=fn_t_1" class="title">I Love Boosters (open caption)</a></h3>
@@ -3283,7 +3435,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="backrooms laurelhurst theater">
       <div class="thumb" style="background-image:url('https://www.laurelhursttheater.com/media.php?guid=bd192665211d9ba8dd6e090783e792fa&amp;code=full')"></div>
       <div class="movie-body">
         <h3><a href="https://www.imdb.com/title/tt26657236/?ref_=fn_t_1" class="title">Backrooms</a></h3>
@@ -3301,7 +3453,7 @@
 <section class="venue">
     <h2><a href="https://portlandartmuseum.org/whitsell/">PAM CUT @ The Whitsell</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="monterey pop x criterion pam cut @ the whitsell criterion x pam cut presents a short series of films in celebration of pam cut’s cinema unbound wild + free weekend!">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Monterey-Pop-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/monterey-pop-x-criterion/" class="title">Monterey Pop x Criterion</a></h3>
@@ -3316,7 +3468,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="paris is burning x criterion pam cut @ the whitsell criterion x pam cut presents a short series of films in celebration of pam cut’s cinema unbound wild + free weekend!">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Paris-is-Burning.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/paris-is-burning-x-criterion/" class="title">Paris Is Burning x Criterion</a></h3>
@@ -3331,7 +3483,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="something wild x criterion pam cut @ the whitsell criterion x pam cut presents a short series of films in celebration of pam cut’s cinema unbound wild + free weekend!">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Something-Wild-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/something-wild-x-criterion/" class="title">Something Wild x Criterion</a></h3>
@@ -3346,7 +3498,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="criterion’s adventures in moviegoing with fred armisen and carrie brownstein pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Fred-and-Carrie-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/adventures-in-moviegoing/" class="title">Criterion’s Adventures in Moviegoing with Fred Armisen and Carrie Brownstein</a></h3>
@@ -3361,7 +3513,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="beau travail pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Beau-Travail.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/beau-travail/" class="title">Beau Travail</a></h3>
@@ -3376,7 +3528,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="but i’m a cheerleader pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/But-Im-a-Cheerleader-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/but-im-a-cheerleader/" class="title">But I’m a Cheerleader</a></h3>
@@ -3391,7 +3543,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the graduate pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/The-Graduate-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/the-graduate/" class="title">The Graduate</a></h3>
@@ -3406,7 +3558,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="a bigger splash (1973) pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/A-Bigger-Splash-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/a-bigger-splash-1973/" class="title">A Bigger Splash (1973)</a></h3>
@@ -3421,7 +3573,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="pour the water as i leave // world refugee day walk pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/05/PTWAIL_web_banner.png')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/pour-the-water-as-i-leave-world-refugee-day-walk/" class="title">Pour the Water as I Leave // World Refugee Day Walk</a></h3>
@@ -3436,7 +3588,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="west side story pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/West-Side-Story-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/west-side-story/" class="title">West Side Story</a></h3>
@@ -3451,7 +3603,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="days of heaven pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Days-of-Heaven-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/days-of-heaven/" class="title">Days of Heaven</a></h3>
@@ -3466,7 +3618,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="moonlight pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Moonlight-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/moonlight/" class="title">Moonlight</a></h3>
@@ -3481,7 +3633,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="a bigger splash pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/A-Bigger-Splash-2015-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/a-bigger-splash/" class="title">A Bigger Splash</a></h3>
@@ -3496,7 +3648,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="dog day afternoon pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Dog-Day-Afternoon-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/dog-day-afternoon/" class="title">Dog Day Afternoon</a></h3>
@@ -3511,7 +3663,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="ali: fear eats the soul pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Ali-Fear-Eats-the-Soul-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/ali-fear-eats-the-soul/" class="title">Ali: Fear Eats the Soul</a></h3>
@@ -3526,7 +3678,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="endless summer pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Endless-Summer-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/endless-summer/" class="title">Endless Summer</a></h3>
@@ -3541,7 +3693,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="safe pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Safe.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/safe/" class="title">Safe</a></h3>
@@ -3556,7 +3708,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="sexy beast pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Sexy-Beast-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/sexy-beast/" class="title">Sexy Beast</a></h3>
@@ -3571,7 +3723,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="women on the verge of a nervous breakdown pam cut @ the whitsell">
       <div class="thumb" style="background-image:url('https://portlandartmuseum.org/wp-content/uploads/2026/04/Women-on-the-Verge-of-a-Nervous-Breakdown-scaled.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://portlandartmuseum.org/event/women-on-the-verge-of-a-nervous-breakdown/" class="title">Women on the Verge of a Nervous Breakdown</a></h3>
@@ -3587,136 +3739,24 @@
   
   </section>
 <section class="venue">
-    <h2><a href="https://stjohnscinema.com/">St. Johns Twin Cinemas</a></h2>
-    
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001511&amp;isHighRes=true')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18671?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Obsession</a></h3>
-        <div class="meta-line">108 min · R · Horror</div>
-        <div class="synopsis">After breaking the mysterious “One Wish Willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7:35pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:35pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Fri, May 22</span>
-    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sat, May 23</span>
-    <span class="screening-times"><span class="showtime">1:45pm</span><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sun, May 24</span>
-    <span class="screening-times"><span class="showtime">1:45pm</span><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Mon, May 25</span>
-    <span class="screening-times"><span class="showtime">1:45pm</span><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Tue, May 26</span>
-    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Wed, May 27</span>
-    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001503&amp;isHighRes=true')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18670?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="meta-line">120 min · PG-13 · Comedy</div>
-        <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway…</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001513&amp;isHighRes=true')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.useast.veezi.com/purchase/18683?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Star Wars: The Mandalorian and Grogu</a></h3>
-        <div class="meta-line">132 min · PG-13 · Action</div>
-        <div class="synopsis">The Mandalorian and Grogu embark on their most thrilling mission yet in Lucasfilm’s “Star Wars: The Mandalorian and Grogu,” an all-new Star Wars adventure opening exclusively in theaters May 22, 2026. The evil Empire has…</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Fri, May 22</span>
-    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sat, May 23</span>
-    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Sun, May 24</span>
-    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Mon, May 25</span>
-    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Tue, May 26</span>
-    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div><div class="screening">
-    <span class="screening-date">Wed, May 27</span>
-    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-  </section>
-<section class="venue">
     <h2><a href="https://www.mcmenamins.com/">Bagdad Theater</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="the devil wears prada 2 bagdad theater">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003557&amp;isHighRes=true')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99142?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99137?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Devil Wears Prada 2</a></h3>
         <div class="meta-line">120 min</div>
         
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">12:30pm</span><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
     
   </div></div>
       </div>
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the mandalorian &amp; grogu bagdad theater">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/98677?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu</a></h3>
@@ -3783,7 +3823,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the mandalorian &amp; grogu (ocap) bagdad theater">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=ta6mvcbmchak78n7cqtdb8e3jw&amp;code=0000003576&amp;isHighRes=true')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/98684?siteToken=ta6mvcbmchak78n7cqtdb8e3jw" class="title">The Mandalorian &amp; Grogu (OCAP)</a></h3>
@@ -3803,24 +3843,109 @@
   
   </section>
 <section class="venue">
-    <h2><a href="https://cstpdx.com/">Clinton Street Theater</a></h2>
+    <h2><a href="https://stjohnscinema.com/">St. Johns Twin Cinemas</a></h2>
     
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/Flaming-Creatures-Poster-Instagram-sized.png')"></div>
+    <article class="movie" data-search="obsession st. johns twin cinemas horror after breaking the mysterious “one wish willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.">
+      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001511&amp;isHighRes=true')"></div>
       <div class="movie-body">
-        <h3><a href="https://cstpdx.com/event/flaming-creatures-on-16mm/" class="title">Flaming Creatures on 16mm</a></h3>
-        
-        <div class="synopsis">Spectrum Between presents Jack Smith’s notorious 1963 film Flaming Creatures on 16mm.</div>
+        <h3><a href="https://ticketing.useast.veezi.com/purchase/18677?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Obsession</a></h3>
+        <div class="meta-line">108 min · R · Horror</div>
+        <div class="synopsis">After breaking the mysterious “One Wish Willow” to win his crush’s heart, a hopeless romantic finds himself getting exactly what he asked for but soon discovers that some desires come at a dark, sinister price.</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7:00pm</span></span>
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:35pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 22</span>
+    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 23</span>
+    <span class="screening-times"><span class="showtime">1:45pm</span><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 24</span>
+    <span class="screening-times"><span class="showtime">1:45pm</span><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 25</span>
+    <span class="screening-times"><span class="showtime">1:45pm</span><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 27</span>
+    <span class="screening-times"><span class="showtime">4:45pm</span><span class="showtime">7:45pm</span></span>
     
   </div></div>
       </div>
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the devil wears prada 2 st. johns twin cinemas comedy twenty years after making their iconic turns as miranda, andy, emily and nigel—meryl streep, anne hathaway, emily blunt and stanley tucci return to the fashionable streets of new york city and the sleek offices of runway magazine in 20th century studios’ “the devil wears prada 2,” the eagerly awaited sequel to the 2006 phenomenon that defined a generation. the film is directed by david frankel, written by aline brosh mckenna, produced by wendy finerman, and executive produced by michael bederman, karen rosenfelt and aline brosh mckenna. ">
+      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001503&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.useast.veezi.com/purchase/18676?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min · PG-13 · Comedy</div>
+        <div class="synopsis">Twenty years after making their iconic turns as Miranda, Andy, Emily and Nigel—Meryl Streep, Anne Hathaway, Emily Blunt and Stanley Tucci return to the fashionable streets of New York City and the sleek offices of Runway…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+
+    <article class="movie" data-search="star wars: the mandalorian and grogu st. johns twin cinemas action the mandalorian and grogu embark on their most thrilling mission yet in lucasfilm’s “star wars: the mandalorian and grogu,” an all-new star wars adventure opening exclusively in theaters may 22, 2026. the evil empire has fallen, and imperial warlords remain scattered throughout the galaxy. as the fledgling new republic works to protect everything the rebellion fought for, they have enlisted the help of legendary mandalorian bounty hunter din djarin (pedro pascal) and his young apprentice grogu. directed by jon favreau, “star wars: the mandalorian and grogu” also stars sigourney weaver and jeremy allen white, is written by jon favreau &amp; dave filoni &amp; noah kloor, and is produced by jon favreau, p.g.a., kathleen kennedy, p.g.a., dave filoni, p.g.a., and ian bryce, p.g.a., with karen gilchrist, john bartnicki, and carrie beck serving as executive producers. the music is composed by ludwig göransson.">
+      <div class="thumb" style="background-image:url('https://ticketing.useast.veezi.com/Media/Poster?siteToken=wa27tvhkay8eqf8wswr30vk6xg&amp;code=0000001513&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.useast.veezi.com/purchase/18683?siteToken=wa27tvhkay8eqf8wswr30vk6xg" class="title">Star Wars: The Mandalorian and Grogu</a></h3>
+        <div class="meta-line">132 min · PG-13 · Action</div>
+        <div class="synopsis">The Mandalorian and Grogu embark on their most thrilling mission yet in Lucasfilm’s “Star Wars: The Mandalorian and Grogu,” an all-new Star Wars adventure opening exclusively in theaters May 22, 2026. The evil Empire has…</div>
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Fri, May 22</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sat, May 23</span>
+    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Sun, May 24</span>
+    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Mon, May 25</span>
+    <span class="screening-times"><span class="showtime">1:15pm</span><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Tue, May 26</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div><div class="screening">
+    <span class="screening-date">Wed, May 27</span>
+    <span class="screening-times"><span class="showtime">4:15pm</span><span class="showtime">7:15pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://cstpdx.com/">Clinton Street Theater</a></h2>
+    
+    <article class="movie" data-search="the stone wood witches (1976) (church of film) clinton street theater a young and politically disillusioned woman falls under the spell of a coven of witches. there she apprentices, learning to commune with nature, cross dimensions, and work spells on a spiritually dying world. the witches ask one important task in return: she must lure a man to embody satan during the sabbath.">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/cofStone-Wood-Witches-Poster.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/the-stone-wood-witches-1976-church-of-film/" class="title">THE STONE WOOD WITCHES (1976) (Church of Film)</a></h3>
@@ -3835,7 +3960,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the holidays ten minute play festival clinton street theater doors at 6:30 pm; show at 7:00 pm.">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/Beach-Holiday-10MPF.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/the-holidays-ten-minute-play-festival/" class="title">The Holidays Ten Minute Play Festival</a></h3>
@@ -3862,7 +3987,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the rocky horror picture show with thom hilton clinton street theater if you’ve ever wanted to attend, but didn’t know if you’d enjoy your first time, our special host for this evening, thom hilton, will be your guide. you’ll learn the funniest callbacks, proper prop timing, and how to dance the time warp.">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2023/07/rhps-virgins.webp')"></div>
       <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/the-rocky-horror-picture-show-with-thom-hilton-16/" class="title">The Rocky Horror Picture Show with Thom Hilton</a></h3>
@@ -3877,7 +4002,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the portland ecofilm festival presents: new indigenous films clinton street theater a showcase of films from this year’s indigenous voices series, which centers the wisdom, accomplishments, stories, and struggles of indigenous people around the living world.">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/01/portland-ecofilm-new-indigenous-films-2026-poster.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/the-portland-ecofilm-festival-presents-new-indigenous-films/" class="title">The Portland EcoFilm Festival presents: New Indigenous Films</a></h3>
@@ -3892,7 +4017,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="femmes femmes (1974) (church of film) clinton street theater two aging actresses share an apartment in paris, and a life. retreating into champagne and fantasies, using the trade of theatre to dress a slowly unraveling existence, they try on feminine roles, and revisit the ones that have failed them.">
       <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/04/cofFemmes-Femmes-Poster.jpg')"></div>
       <div class="movie-body">
         <h3><a href="https://cstpdx.com/event/femmes-femmes-1974-church-of-film/" class="title">FEMMES FEMMES (1974) (Church of Film)</a></h3>
@@ -3906,79 +4031,16 @@
       </div>
     </article>
   
-  </section>
-<section class="venue">
-    <h2><a href="https://www.thecinemagictheater.com/">Cinemagic</a></h2>
-    
-    <article class="movie">
-      <div class="thumb thumb-empty"></div>
+
+    <article class="movie" data-search="16mm nyback showdown clinton street theater watch as two 16mm programming teams (darkroom associates and astral projections) fire up their projectors and trade cinematic jabs back and forth by screening selections from the world-famous dennis nyback 16mm film archive!">
+      <div class="thumb" style="background-image:url('https://cstpdx.com/wp-content/uploads/2026/02/CST-16mm-Nyback-Showdown-March-2026-no-locationdate.jpg')"></div>
       <div class="movie-body">
-        <h3><a href="https://tickets.thecinemagictheater.com/movie/pusher" class="title">Pusher II: With Blood on My Hands</a></h3>
+        <h3><a href="https://cstpdx.com/event/16mm-nyback-showdown-7/" class="title">16mm Nyback Showdown</a></h3>
         
-        <div class="synopsis">Just released from prison, Tonny tries to gain the respect of his father, a notorious gangster who has nothing but contempt for his son.</div>
+        <div class="synopsis">Watch as two 16mm programming teams (Darkroom Associates and Astral Projections) fire up their projectors and trade cinematic jabs back and forth by screening selections from the world-famous Dennis Nyback 16mm film arch…</div>
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
+    <span class="screening-date">Thu, May 28</span>
     <span class="screening-times"><span class="showtime">7:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb thumb-empty"></div>
-      <div class="movie-body">
-        <h3><a href="https://tickets.thecinemagictheater.com/movie/once-upon-a-time-in-the-west" class="title">Once Upon a Time in the West</a></h3>
-        <div class="meta-line">165 min</div>
-        <div class="synopsis">Frank is a sadistic outlaw hired by a railroad baron to murder a farmer named McBain and his family in order for his boss to inherit the land.</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">7:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb thumb-empty"></div>
-      <div class="movie-body">
-        <h3><a href="https://tickets.thecinemagictheater.com/movie/pusher" class="title">Pusher III: I’m the Angel of Death</a></h3>
-        
-        <div class="synopsis">Milo, the terrifying drug baron from the original Pusher, is now middle-aged, is forced to contend with a new order of young hoods to move a shipment of ecstasy that arrives in place of the heroin he was expecting.</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Thu, May 21</span>
-    <span class="screening-times"><span class="showtime">7:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb thumb-empty"></div>
-      <div class="movie-body">
-        <h3><a href="https://tickets.thecinemagictheater.com/movie/lawrence-of-arabia" class="title">Lawrence of Arabia</a></h3>
-        <div class="meta-line">227 min</div>
-        <div class="synopsis">T.E. Lawrence, an untested scholar making maps for British Intelligence, is sent on a fact-finding mission in the Arabian Desert.</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Sat, May 30</span>
-    <span class="screening-times"><span class="showtime">2:00pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
-
-    <article class="movie">
-      <div class="thumb thumb-empty"></div>
-      <div class="movie-body">
-        <h3><a href="https://tickets.thecinemagictheater.com/movie/once-upon-a-time-in-america" class="title">Once Upon a Time in America</a></h3>
-        <div class="meta-line">229 min</div>
-        <div class="synopsis">Robert De Niro and James Woods play lifelong pals whose rise as crime kingpins unravels in death and corruption in Sergio Leone’s sprawling prohibition epic.</div>
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Sun, May 31</span>
-    <span class="screening-times"><span class="showtime">2:00pm</span></span>
     
   </div></div>
       </div>
@@ -3988,17 +4050,13 @@
 <section class="venue">
     <h2><a href="https://www.mcmenamins.com/">Anderson School Theater</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="the devil wears prada 2 anderson school theater">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=zm3drrwk0vq0zf44k078xwsxz4&amp;code=0000003557&amp;isHighRes=true')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99196?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Devil Wears Prada 2</a></h3>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99190?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Devil Wears Prada 2</a></h3>
         <div class="meta-line">120 min</div>
         
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7pm</span></span>
-    
-  </div><div class="screening">
     <span class="screening-date">Wed, May 20</span>
     <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
     
@@ -4006,34 +4064,16 @@
       </div>
     </article>
   
-  </section>
-<section class="venue">
-    <h2><a href="https://www.mcmenamins.com/">Old St. Francis Theater</a></h2>
-    
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=cafvhqf5p6x6x3znk99h6a4mzc&amp;code=0000003557&amp;isHighRes=true')"></div>
-      <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99179?siteToken=cafvhqf5p6x6x3znk99h6a4mzc" class="title">The Devil Wears Prada 2</a></h3>
-        <div class="meta-line">120 min</div>
-        
-        <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7pm</span></span>
-    
-  </div></div>
-      </div>
-    </article>
-  
 
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=cafvhqf5p6x6x3znk99h6a4mzc&amp;code=0000003557&amp;isHighRes=true')"></div>
+    <article class="movie" data-search="the mandalorian &amp; grogu anderson school theater">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=zm3drrwk0vq0zf44k078xwsxz4&amp;code=0000003576&amp;isHighRes=true')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99180?siteToken=cafvhqf5p6x6x3znk99h6a4mzc" class="title">The Devil Wears Prada 2 (OCAP)</a></h3>
-        <div class="meta-line">120 min</div>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/98754?siteToken=zm3drrwk0vq0zf44k078xwsxz4" class="title">The Mandalorian &amp; Grogu</a></h3>
+        <div class="meta-line">132 min</div>
         
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Wed, May 20</span>
-    <span class="screening-times"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
+    <span class="screening-date">Thu, May 21</span>
+    <span class="screening-times"><span class="showtime">3:15pm</span><span class="showtime">7pm</span></span>
     
   </div></div>
       </div>
@@ -4043,7 +4083,7 @@
 <section class="venue">
     <h2><a href="https://www.mcmenamins.com/">Kennedy School Theater</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="hoppers kennedy school theater">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=wh74yr6fq3am4qbkh72fhcyr4g&amp;code=0000003544&amp;isHighRes=true')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/99160?siteToken=wh74yr6fq3am4qbkh72fhcyr4g" class="title">Hoppers</a></h3>
@@ -4058,7 +4098,7 @@
     </article>
   
 
-    <article class="movie">
+    <article class="movie" data-search="the drama kennedy school theater">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=wh74yr6fq3am4qbkh72fhcyr4g&amp;code=0000003591&amp;isHighRes=true')"></div>
       <div class="movie-body">
         <h3><a href="https://ticketing.uswest.veezi.com/purchase/99163?siteToken=wh74yr6fq3am4qbkh72fhcyr4g" class="title">The Drama</a></h3>
@@ -4074,17 +4114,53 @@
   
   </section>
 <section class="venue">
-    <h2><a href="https://www.mcmenamins.com/">Power Station Theater</a></h2>
+    <h2><a href="https://www.mcmenamins.com/">Old St. Francis Theater</a></h2>
     
-    <article class="movie">
-      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=q1mhjnhxckz7zpe81y7vahg9w4&amp;code=0000003557&amp;isHighRes=true')"></div>
+    <article class="movie" data-search="the devil wears prada 2 (ocap) old st. francis theater">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=cafvhqf5p6x6x3znk99h6a4mzc&amp;code=0000003557&amp;isHighRes=true')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99272?siteToken=q1mhjnhxckz7zpe81y7vahg9w4" class="title">The Devil Wears Prada 2</a></h3>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99180?siteToken=cafvhqf5p6x6x3znk99h6a4mzc" class="title">The Devil Wears Prada 2 (OCAP)</a></h3>
         <div class="meta-line">120 min</div>
         
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7pm</span></span>
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Olympic Club Theater</a></h2>
+    
+    <article class="movie" data-search="the devil wears prada 2 olympic club theater">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=1jaj4c8vy161vh1fm24s0v9rg0&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99204?siteToken=1jaj4c8vy161vh1fm24s0v9rg0" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">4pm</span><span class="showtime">7pm</span></span>
+    
+  </div></div>
+      </div>
+    </article>
+  
+  </section>
+<section class="venue">
+    <h2><a href="https://www.mcmenamins.com/">Power Station Theater</a></h2>
+    
+    <article class="movie" data-search="the devil wears prada 2 power station theater">
+      <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=q1mhjnhxckz7zpe81y7vahg9w4&amp;code=0000003557&amp;isHighRes=true')"></div>
+      <div class="movie-body">
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99267?siteToken=q1mhjnhxckz7zpe81y7vahg9w4" class="title">The Devil Wears Prada 2</a></h3>
+        <div class="meta-line">120 min</div>
+        
+        <div class="screenings"><div class="screening">
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
     
   </div></div>
       </div>
@@ -4094,23 +4170,64 @@
 <section class="venue">
     <h2><a href="https://www.mcmenamins.com/">St. Johns Theater &amp; Pub</a></h2>
     
-    <article class="movie">
+    <article class="movie" data-search="the devil wears prada 2 st. johns theater &amp; pub">
       <div class="thumb" style="background-image:url('https://ticketing.uswest.veezi.com/Media/Poster?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8&amp;code=0000003557&amp;isHighRes=true')"></div>
       <div class="movie-body">
-        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99227?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8" class="title">The Devil Wears Prada 2</a></h3>
+        <h3><a href="https://ticketing.uswest.veezi.com/purchase/99222?siteToken=6pwkc8e4w7pv3fy9gbxxrvy1s8" class="title">The Devil Wears Prada 2</a></h3>
         <div class="meta-line">120 min</div>
         
         <div class="screenings"><div class="screening">
-    <span class="screening-date">Tue, May 19</span>
-    <span class="screening-times"><span class="showtime">7pm</span></span>
+    <span class="screening-date">Wed, May 20</span>
+    <span class="screening-times"><span class="showtime">3:30pm</span><span class="showtime">7pm</span></span>
     
   </div></div>
       </div>
     </article>
   
   </section>
+<div id="no-results">No movies match your search.</div>
 <footer>
   Sources: Laurelhurst, St. Johns Twin Cinemas, McMenamins, Clinton Street Theater
 </footer>
+<script>
+(function () {
+  const input = document.getElementById("search");
+  const count = document.getElementById("search-count");
+  const noResults = document.getElementById("no-results");
+  const movies = Array.from(document.querySelectorAll(".movie"));
+  const venues = Array.from(document.querySelectorAll(".venue"));
+  const totalMovies = movies.length;
+
+  function tokenize(q) {
+    return q.toLowerCase().split(/\s+/).filter(Boolean);
+  }
+
+  function apply(q) {
+    const tokens = tokenize(q);
+    const searching = tokens.length > 0;
+    document.body.classList.toggle("searching", searching);
+
+    let visible = 0;
+    for (const m of movies) {
+      const hay = m.dataset.search;
+      const match = !searching || tokens.every((t) => hay.includes(t));
+      m.classList.toggle("hidden", !match);
+      if (match) visible++;
+    }
+
+    for (const v of venues) {
+      const anyVisible = v.querySelector(".movie:not(.hidden)");
+      v.classList.toggle("hidden", !anyVisible);
+    }
+
+    noResults.classList.toggle("show", searching && visible === 0);
+    count.textContent = searching
+      ? visible + " of " + totalMovies
+      : "";
+  }
+
+  input.addEventListener("input", (e) => apply(e.target.value));
+})();
+</script>
 </body>
 </html>
